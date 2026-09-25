@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0d1629" />
+    <link rel="icon" type="image/png" href="games/ancient-greece/ancient-greece.icon.png" />
+    <meta
+      name="description"
+      content="درس عربي تفاعلي عن اليونان القديمة"
+    />
+    <title>اليونان القديمة | درس تفاعلي</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#lesson">انتقل إلى محتوى الدرس</a>
+
+    <header class="site-header" id="home">
+      <nav class="nav shell" aria-label="التنقل الرئيسي">
+        <a class="brand" href="#home" aria-label="اليونان القديمة — الرئيسية">
+          <span class="brand-mark" aria-hidden="true">Ω</span>
+          <span>اليونان القديمة</span>
+        </a>
+        <div class="nav-links">
+          <a class="active" href="#home">الرئيسية</a>
+          <a href="#lesson">الدرس</a>
+          <a href="#game">اللعبة</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <p class="team-names">عمر، حمزة وأسامة</p>
+          <p class="eyebrow"><span></span> رحلة تعليمية تفاعلية</p>
+          <h1 id="hero-title">اليونان<br /><em>القديمة</em></h1>
+          <p class="hero-description">
+            استكشف حضارةً غيّرت العالم، وتعرّف إلى مدنها وأفكارها من خلال
+            درسٍ بصري وتجربة ثلاثية الأبعاد.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#lesson">
+              ادخل الدرس
+              <span aria-hidden="true">←</span>
+            </a>
+            <a class="text-link" href="#game">انتقل إلى اللعبة</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="صورة لمعبد البارثينون" role="img">
+          <div class="hero-image" aria-hidden="true"></div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="visual-badge">
+            <span>حضارة امتدت</span>
+            <strong>أكثر من ١٠٠٠ عام</strong>
+          </div>
+        </div>
+
+        <a class="scroll-cue" href="#lesson" aria-label="مرّر إلى الدرس">
+          <span>اكتشف</span>
+          <i aria-hidden="true"></i>
+        </a>
+      </section>
+
+      <section class="section lesson-section" id="lesson" aria-labelledby="lesson-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow"><span></span> العرض التقديمي</p>
+            <h2 id="lesson-title">الدرس</h2>
+            <p>تصفّح شرائح الدرس، ثم انتقل إلى النشاط التفاعلي لتطبّق ما تعلّمته.</p>
+          </div>
+
+          <div class="presentation-card reveal" id="presentationViewer">
+            <div class="presentation-topbar">
+              <div>
+                <span class="status-dot" aria-hidden="true"></span>
+                <span>عرض الدرس</span>
+              </div>
+              <button class="icon-button" id="presentationFullscreen" type="button" aria-label="عرض الشرائح بملء الشاشة" title="ملء الشاشة">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
+              </button>
+            </div>
+
+            <div class="slide-stage" aria-live="polite" aria-busy="true">
+              <div class="slide-loader" id="slideLoader"><span></span> جارٍ تجهيز الشرائح…</div>
+              <img id="slideImage" alt="" />
+            </div>
+
+            <div class="presentation-controls">
+              <button class="control-button" id="nextSlide" type="button">
+                <span aria-hidden="true">→</span> التالي
+              </button>
+              <p class="slide-counter" id="slideCounter">— / —</p>
+              <button class="control-button" id="previousSlide" type="button">
+                السابق <span aria-hidden="true">←</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section game-section" id="game" aria-labelledby="game-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow"><span></span> نشاط ثلاثي الأبعاد</p>
+            <h2 id="game-title">جرّب اليونان القديمة بنفسك</h2>
+            <p>ادخل العالم التفاعلي، تحرّك بين المواقع، ونفّذ المهمات التعليمية.</p>
+          </div>
+
+          <div class="game-card reveal" id="gameCard">
+            <div class="game-toolbar">
+              <div class="game-status"><span id="gameStatusDot"></span><strong id="gameStatus">جاهز للبدء</strong></div>
+              <button class="icon-button" id="gameFullscreen" type="button" aria-label="عرض اللعبة بملء الشاشة" title="ملء الشاشة">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
+              </button>
+            </div>
+
+            <div class="game-viewport" id="gameViewport">
+              <iframe
+                id="gameFrame"
+                title="لعبة اليونان القديمة ثلاثية الأبعاد"
+                data-src="games/ancient-greece/ancient-greece-fast.html"
+                allow="fullscreen; autoplay"
+                allowfullscreen
+                tabindex="0"
+              ></iframe>
+
+              <div class="game-cover" id="gameCover">
+                <div class="column-icon" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+                <p class="game-kicker">النشاط التفاعلي</p>
+                <h3>هل أنت مستعد لبدء الرحلة؟</h3>
+                <p>حجم اللعبة كبير، لذلك لن يبدأ التحميل إلا عند الضغط على الزر.</p>
+                <button class="button button-primary" id="startGame" type="button">
+                  ابدأ اللعبة <span aria-hidden="true">←</span>
+                </button>
+              </div>
+
+              <div class="game-loading" id="gameLoading" hidden>
+                <div class="loader-ring" aria-hidden="true"></div>
+                <strong>جارٍ تحميل عالم اليونان القديمة…</strong>
+                <span>قد يستغرق ذلك بعض الوقت بسبب حجم اللعبة.</span>
+              </div>
+
+              <div class="game-error" id="gameError" hidden>
+                <strong>تعذّر تحميل اللعبة</strong>
+                <span>تأكد من تشغيل الموقع عبر الخادم المحلي، ثم حاول مرة أخرى.</span>
+                <button class="control-button" id="retryGame" type="button">إعادة المحاولة</button>
+              </div>
+            </div>
+
+            <div class="game-help">
+              <span><kbd>W A S D</kbd> للحركة</span>
+              <span><kbd>Space</kbd> للقفز</span>
+              <span><kbd>E</kbd> للتفاعل</span>
+              <span>انقر داخل اللعبة للتحكم</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-inner">
+        <p>تجربة تعليمية عن اليونان القديمة</p>
+        <a href="#home">العودة إلى الأعلى ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

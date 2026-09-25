@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/interaction/test_npc.gd" id="1_npc"]
+[ext_resource type="Script" path="res://scripts/characters/generated_character_visual.gd" id="2_visual"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/characters/Teacher.glb" id="3_character"]
+
+[sub_resource type="CapsuleShape3D" id="NpcShape"]
+radius = 0.42
+height = 1.92
+
+[sub_resource type="SphereShape3D" id="InteractionShape"]
+radius = 2.65
+
+[sub_resource type="StandardMaterial3D" id="MarkerBaseMaterial"]
+albedo_color = Color(0.72, 0.57, 0.28, 1)
+roughness = 0.85
+
+[sub_resource type="CylinderMesh" id="MarkerBaseMesh"]
+material = SubResource("MarkerBaseMaterial")
+top_radius = 0.5
+bottom_radius = 0.56
+height = 0.08
+radial_segments = 18
+
+[node name="TestNPC" type="StaticBody3D" groups=["story_npc"]]
+script = ExtResource("1_npc")
+appearance_profile = 2
+appearance_variant = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.96, 0)
+shape = SubResource("NpcShape")
+
+[node name="Visual" type="Node3D" parent="."]
+script = ExtResource("2_visual")
+idle_only = true
+
+[node name="CharacterModel" parent="Visual" instance=ExtResource("3_character")]
+
+[node name="MarkerBase" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.04, 0)
+mesh = SubResource("MarkerBaseMesh")
+
+[node name="QuestMarker" type="Label3D" parent="."]
+position = Vector3(0, 2.72, 0)
+billboard = 1
+text = "!"
+font_size = 52
+outline_size = 9
+modulate = Color(1, 0.76, 0.18, 0.96)
+outline_modulate = Color(0.08, 0.055, 0.02, 0.95)
+no_depth_test = true
+fixed_size = true
+visibility_range_end = 30.0
+
+[node name="InteractionArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+position = Vector3(0, 1.0, 0)
+shape = SubResource("InteractionShape")

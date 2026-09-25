@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1427"/><stop offset="1" stop-color="#141c35"/></linearGradient>
+    <linearGradient id="a2"><stop stop-color="#9b45ff"/><stop offset="1" stop-color="#4d7cff"/></linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg2)"/>
+  <text x="800" y="155" text-anchor="middle" direction="rtl" fill="#ffffff" font-size="70" font-weight="700" font-family="Tahoma, Arial">إضافة العرض في ثلاث خطوات</text>
+  <text x="800" y="220" text-anchor="middle" direction="rtl" fill="#aeb9ce" font-size="29" font-family="Tahoma, Arial">حوّل ملف PowerPoint إلى صور ثم حدّث قائمة الشرائح</text>
+  <g font-family="Tahoma, Arial" text-anchor="middle">
+    <g transform="translate(1150 340)"><rect x="-185" width="370" height="320" rx="30" fill="#17233e" stroke="#ffffff" stroke-opacity=".1"/><circle cy="75" r="38" fill="url(#a2)"/><text y="88" fill="#091020" font-size="34" font-weight="700">١</text><text y="172" direction="rtl" fill="#ffffff" font-size="34" font-weight="700">صدّر الشرائح</text><text y="225" direction="rtl" fill="#aeb9ce" font-size="24">PNG أو JPG</text></g>
+    <g transform="translate(800 340)"><rect x="-185" width="370" height="320" rx="30" fill="#17233e" stroke="#ffffff" stroke-opacity=".1"/><circle cy="75" r="38" fill="url(#a2)"/><text y="88" fill="#091020" font-size="34" font-weight="700">٢</text><text y="172" direction="rtl" fill="#ffffff" font-size="34" font-weight="700">انسخ الصور</text><text y="225" direction="rtl" fill="#aeb9ce" font-size="22">content/presentation/slides</text></g>
+    <g transform="translate(450 340)"><rect x="-185" width="370" height="320" rx="30" fill="#17233e" stroke="#ffffff" stroke-opacity=".1"/><circle cy="75" r="38" fill="url(#a2)"/><text y="88" fill="#091020" font-size="34" font-weight="700">٣</text><text y="172" direction="rtl" fill="#ffffff" font-size="34" font-weight="700">حدّث القائمة</text><text y="225" direction="rtl" fill="#aeb9ce" font-size="22">manifest.json</text></g>
+  </g>
+</svg>

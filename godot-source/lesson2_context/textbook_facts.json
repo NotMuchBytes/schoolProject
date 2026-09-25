@@ -1,0 +1,528 @@
+{
+  "source_title_ar": "الحياة العامة في الحضارة اليونانية",
+  "source_filename_received": "book(1).pdf",
+  "source_scope": "Original upload PDF pages 5-10; printed textbook pages 12-17",
+  "method": "Visual reading of the supplied page images; source-bound paraphrases, not outside historical verification.",
+  "facts": [
+    {
+      "fact_id": "POL01",
+      "section_ar": "أولاً: الحياة السياسية",
+      "text_ar": "تطورت أشكال الحكم في المدن اليونانية وتعددت بمرور الوقت؛ وكانت معظم المدن تحكم بالنظام الملكي، وكان الملك يمثل السلطة العليا.",
+      "source": {
+        "printed_page": 12,
+        "uploaded_pdf_page": 5,
+        "extracted_pdf_page": 1,
+        "image": "sources/textbook_page_12.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "POL02",
+      "section_ar": "أولاً: الحياة السياسية",
+      "text_ar": "ظهرت أنظمة جديدة مثل النظام الديمقراطي في أثينا، ويعرض الدرس أثينا بأنها أول من حكم بالنظام الديمقراطي.",
+      "source": {
+        "printed_page": 12,
+        "uploaded_pdf_page": 5,
+        "extracted_pdf_page": 1,
+        "image": "sources/textbook_page_12.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "Preserve the lesson framing; do not expand this into a universal claim of equal participation by every resident."
+    },
+    {
+      "fact_id": "POL03",
+      "section_ar": "أولاً: الحياة السياسية",
+      "text_ar": "ظهر نظام الحكم العسكري الصارم في إسبرطة، وأنظمة الحكم الاستبدادي في بعض المدن اليونانية.",
+      "source": {
+        "printed_page": 12,
+        "uploaded_pdf_page": 5,
+        "extracted_pdf_page": 1,
+        "image": "sources/textbook_page_12.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "POL04",
+      "section_ar": "أولاً: الحياة السياسية",
+      "text_ar": "عكست أنظمة الحكم تطور الفكر السياسي والاجتماعي، وكان لها تأثير كبير في النظم السياسية التي تلتها.",
+      "source": {
+        "printed_page": 12,
+        "uploaded_pdf_page": 5,
+        "extracted_pdf_page": 1,
+        "image": "sources/textbook_page_12.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "ECO01",
+      "section_ar": "ثانياً: الحياة الاقتصادية",
+      "text_ar": "تطورت الحياة الاقتصادية في اليونان بسبب الموقع الجغرافي والتوسع في مناطق عديدة.",
+      "source": {
+        "printed_page": 12,
+        "uploaded_pdf_page": 5,
+        "extracted_pdf_page": 1,
+        "image": "sources/textbook_page_12.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "AGR01",
+      "section_ar": "ثانياً: الحياة الاقتصادية / الزراعة",
+      "text_ar": "اعتمدت الزراعة على الحبوب وأشجار الزيتون والعنب، لتوافر التربة الخصبة والمياه والمناخ المعتدل.",
+      "source": {
+        "printed_page": 12,
+        "uploaded_pdf_page": 5,
+        "extracted_pdf_page": 1,
+        "image": "sources/textbook_page_12.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "AGR02",
+      "section_ar": "ثانياً: الحياة الاقتصادية / الزراعة",
+      "text_ar": "انتشرت مطاحن الحبوب ومعاصر الزيتون، واهتم اليونان بتربية الحيوانات كالأغنام والأبقار.",
+      "source": {
+        "printed_page": 12,
+        "uploaded_pdf_page": 5,
+        "extracted_pdf_page": 1,
+        "image": "sources/textbook_page_12.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "IND01",
+      "section_ar": "ثانياً: الحياة الاقتصادية / الصناعة",
+      "text_ar": "من عوامل ازدهار الصناعة والحرف اليدوية: توافر المواد الخام من معادن وأخشاب، والتنافس الصناعي مع الحضارات المجاورة كالفينيقية، وانتشار الأسواق داخل المدن اليونانية.",
+      "source": {
+        "printed_page": 13,
+        "uploaded_pdf_page": 6,
+        "extracted_pdf_page": 2,
+        "image": "sources/textbook_page_13.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "Read all three circles in Figure 4; do not lose the Phoenician competition factor."
+    },
+    {
+      "fact_id": "IND02",
+      "section_ar": "ثانياً: الحياة الاقتصادية / الصناعة",
+      "text_ar": "من أبرز الصناعات: الأسلحة والحلي والسفن والأدوات الزراعية والأواني والفخار.",
+      "source": {
+        "printed_page": 13,
+        "uploaded_pdf_page": 6,
+        "extracted_pdf_page": 2,
+        "image": "sources/textbook_page_13.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "TRA01",
+      "section_ar": "ثانياً: الحياة الاقتصادية / التجارة",
+      "text_ar": "نشطت التجارة الداخلية بسبب توافر الأسواق والمنتجات المحلية، وساعد الإنتاج الزراعي والصناعات المتعددة على تنشيط التجارة.",
+      "source": {
+        "printed_page": 13,
+        "uploaded_pdf_page": 6,
+        "extracted_pdf_page": 2,
+        "image": "sources/textbook_page_13.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "TRA02",
+      "section_ar": "ثانياً: الحياة الاقتصادية / التجارة",
+      "text_ar": "ازدهرت التجارة الخارجية بسبب موقع اليونان على البحار واتصالها بالحضارات الأخرى ووجود المستعمرات اليونانية التي شكلت أسواقاً ومراكز لشحن البضائع.",
+      "source": {
+        "printed_page": 13,
+        "uploaded_pdf_page": 6,
+        "extracted_pdf_page": 2,
+        "image": "sources/textbook_page_13.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "SOC01",
+      "section_ar": "ثالثاً: الحياة الاجتماعية",
+      "text_ar": "كانت القبيلة أساس المجتمع، ومع التطور الاقتصادي والاجتماعي والاستقرار ظهرت القرية ثم توسعت لتصبح مدناً تشكلت فيها دول المدن.",
+      "source": {
+        "printed_page": 13,
+        "uploaded_pdf_page": 6,
+        "extracted_pdf_page": 2,
+        "image": "sources/textbook_page_13.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "SOC02",
+      "section_ar": "ثالثاً: الحياة الاجتماعية",
+      "text_ar": "ترتيب طبقات المجتمع في الشكل من الأعلى إلى الأسفل: الطبقة الحاكمة، طبقة التجار والأثرياء، الطبقة العامة، طبقة العبيد.",
+      "source": {
+        "printed_page": 13,
+        "uploaded_pdf_page": 6,
+        "extracted_pdf_page": 2,
+        "image": "sources/textbook_page_13.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "SOC03",
+      "section_ar": "ثالثاً: الحياة الاجتماعية",
+      "text_ar": "يذكر الدرس أن الطبقات الثلاث الأولى تمتعت بحقوق المواطنة الكاملة، بينما حرم العبيد من هذه الحقوق.",
+      "source": {
+        "printed_page": 13,
+        "uploaded_pdf_page": 6,
+        "extracted_pdf_page": 2,
+        "image": "sources/textbook_page_13.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "Present as the textbook description. Do not add claims about every Greek place or century; do not turn slavery into a reward, trade, or role-play mechanic."
+    },
+    {
+      "fact_id": "SOC04",
+      "section_ar": "ثالثاً: الحياة الاجتماعية",
+      "text_ar": "يذكر الدرس من حقوق المرأة: حق امتلاك الأراضي، وحق الميراث، وحق التعليم.",
+      "source": {
+        "printed_page": 13,
+        "uploaded_pdf_page": 6,
+        "extracted_pdf_page": 2,
+        "image": "sources/textbook_page_13.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "This broad textbook statement is source-bound. Keep attribution in the study card, and do not silently replace it with external history or expand it into universal equality."
+    },
+    {
+      "fact_id": "REL01",
+      "section_ar": "رابعاً: الحياة الدينية",
+      "text_ar": "عبد اليونان قوى الطبيعة لاعتقادهم أن القوة الناتجة عنها تتحكم فيها آلهة معينة، وعبروا عن آلهتهم بصور وتماثيل بشرية وحيوانية وبنوا لها المعابد.",
+      "source": {
+        "printed_page": 14,
+        "uploaded_pdf_page": 7,
+        "extracted_pdf_page": 3,
+        "image": "sources/textbook_page_14.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "REL02",
+      "section_ar": "رابعاً: الحياة الدينية",
+      "text_ar": "يذكر الدرس زيوس كبير الآلهة، وأبولو إله الشمس، وأثينا آلهة الحكمة.",
+      "source": {
+        "printed_page": 14,
+        "uploaded_pdf_page": 7,
+        "extracted_pdf_page": 3,
+        "image": "sources/textbook_page_14.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "Describe beliefs as beliefs. Do not make gods physically intervene or add supernatural rewards."
+    },
+    {
+      "fact_id": "CUL01",
+      "section_ar": "خامساً: الحياة الثقافية والأدبية",
+      "text_ar": "شهدت الحضارة اليونانية ازدهاراً ثقافياً، وانتشرت ثقافتها وآدابها في العالم القديم.",
+      "source": {
+        "printed_page": 14,
+        "uploaded_pdf_page": 7,
+        "extracted_pdf_page": 3,
+        "image": "sources/textbook_page_14.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "THR01",
+      "section_ar": "خامساً: الحياة الثقافية والأدبية / المسرح",
+      "text_ar": "ارتبط الفكر المسرحي بالاحتفالات والطقوس الدينية لشكر الآلهة على الإنتاج الوفير أو التوسل إليها في سنوات القحط.",
+      "source": {
+        "printed_page": 14,
+        "uploaded_pdf_page": 7,
+        "extracted_pdf_page": 3,
+        "image": "sources/textbook_page_14.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "THR02",
+      "section_ar": "خامساً: الحياة الثقافية والأدبية / المسرح",
+      "text_ar": "التراجيديا تنتهي بنهاية حزينة، والكوميديا تنتهي بنهاية سعيدة.",
+      "source": {
+        "printed_page": 14,
+        "uploaded_pdf_page": 7,
+        "extracted_pdf_page": 3,
+        "image": "sources/textbook_page_14.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "THR03",
+      "section_ar": "خامساً: الحياة الثقافية والأدبية / المسرح",
+      "text_ar": "من عناصر المسرح المذكورة: الجوقة، والأوركسترا، وخشبة المسرح، والممثلون.",
+      "source": {
+        "printed_page": 14,
+        "uploaded_pdf_page": 7,
+        "extracted_pdf_page": 3,
+        "image": "sources/textbook_page_14.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "Use the terms exactly. Do not replace الأوركسترا with a modern symphony orchestra. The supplied theatre photo is visual reference, not a measured reconstruction."
+    },
+    {
+      "fact_id": "PHI01",
+      "section_ar": "خامساً: الحياة الثقافية والأدبية / الفلسفة والتاريخ",
+      "text_ar": "أفلاطون مؤسس الفلسفة المثالية، ومن كتبه الجمهورية والقوانين.",
+      "source": {
+        "printed_page": 15,
+        "uploaded_pdf_page": 8,
+        "extracted_pdf_page": 4,
+        "image": "sources/textbook_page_15.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "PHI02",
+      "section_ar": "خامساً: الحياة الثقافية والأدبية / الفلسفة والتاريخ",
+      "text_ar": "أرسطو مؤسس الفلسفة الواقعية، وتلميذ أفلاطون ومعلم الإسكندر المقدوني. استخدم المنهج العلمي في الفلسفة، ومن مؤلفاته السياسة الذي ناقش فيه أنواع الحكومات.",
+      "source": {
+        "printed_page": 15,
+        "uploaded_pdf_page": 8,
+        "extracted_pdf_page": 4,
+        "image": "sources/textbook_page_15.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "HIS01",
+      "section_ar": "خامساً: الحياة الثقافية والأدبية / الفلسفة والتاريخ",
+      "text_ar": "هيرودوت لقب بأبي التاريخ، واعتمد في تاريخه على الأساطير الدينية، وألف في تاريخ اليونان والفرس والشعوب الأخرى.",
+      "source": {
+        "printed_page": 15,
+        "uploaded_pdf_page": 8,
+        "extracted_pdf_page": 4,
+        "image": "sources/textbook_page_15.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "PHI03",
+      "section_ar": "خامساً: الحياة الثقافية والأدبية / حدود المصدر",
+      "text_ar": "ورد اسم سقراط في قائمة الأشخاص على صفحة عنوان الدرس، لكن الصفحات المرفقة لا تقدم فقرة تشرح أفكاره.",
+      "source": {
+        "printed_page": 12,
+        "uploaded_pdf_page": 5,
+        "extracted_pdf_page": 1,
+        "image": "sources/textbook_page_12.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "Do not invent a Socrates biography, quotation, or doctrine. The lesson details Plato, Aristotle and Herodotus."
+    },
+    {
+      "fact_id": "ARC01",
+      "section_ar": "خامساً: الحياة الثقافية والأدبية / العمارة والنحت",
+      "text_ar": "برع اليونانيون في بناء المدن واعتمدت العمارة على توافر مواد خام كالرخام.",
+      "source": {
+        "printed_page": 15,
+        "uploaded_pdf_page": 8,
+        "extracted_pdf_page": 4,
+        "image": "sources/textbook_page_15.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "ARC02",
+      "section_ar": "خامساً: الحياة الثقافية والأدبية / العمارة والنحت",
+      "text_ar": "مميزات المدينة في الشكل: محاطة بالأسوار؛ مركزها الساحة العامة التي يوجد فيها المعبد والمسرح؛ توزع الأبنية فيها بصورة منتظمة.",
+      "source": {
+        "printed_page": 15,
+        "uploaded_pdf_page": 8,
+        "extracted_pdf_page": 4,
+        "image": "sources/textbook_page_15.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "Use all three items in Figure 6 as actual level-design requirements."
+    },
+    {
+      "fact_id": "ARC03",
+      "section_ar": "خامساً: الحياة الثقافية والأدبية / العمارة والنحت",
+      "text_ar": "اعتمد النحت على الرخام والبرونز، وشملت المنحوتات الآلهة وكبار القادة والشخصيات العسكرية.",
+      "source": {
+        "printed_page": 15,
+        "uploaded_pdf_page": 8,
+        "extracted_pdf_page": 4,
+        "image": "sources/textbook_page_15.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "SPT01",
+      "section_ar": "خامساً: الحياة الثقافية والأدبية / الرياضة",
+      "text_ar": "اهتم اليونانيون بالمصارعة والسباحة وركوب الخيل والجري والصيد، وكانت أثينا مركزاً للألعاب والتمارين الرياضية.",
+      "source": {
+        "printed_page": 16,
+        "uploaded_pdf_page": 9,
+        "extracted_pdf_page": 5,
+        "image": "sources/textbook_page_16.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "SPT02",
+      "section_ar": "خامساً: الحياة الثقافية والأدبية / الرياضة",
+      "text_ar": "يذكر الدرس أن اليونانيين عرفوا الهوكي وابتكروا الجمباز، وأقاموا مباريات يحضرها الناس للمشاهدة والتشجيع، وعرفوا الألعاب الجماعية والفردية، وينسب إليهم إقامة الألعاب الأولمبية.",
+      "source": {
+        "printed_page": 16,
+        "uploaded_pdf_page": 9,
+        "extracted_pdf_page": 5,
+        "image": "sources/textbook_page_16.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "Keep these claims source-bound; no modern sports equipment, logos, stadiums, or current Olympics details."
+    },
+    {
+      "fact_id": "JOR01",
+      "section_ar": "مظاهر الحضارة اليونانية في الأردن",
+      "text_ar": "يربط الدرس خضوع الأردن للحكم اليوناني باحتلال الإسكندر المقدوني مصر وبلاد الشام عام 332 ق.م.",
+      "source": {
+        "printed_page": 16,
+        "uploaded_pdf_page": 9,
+        "extracted_pdf_page": 5,
+        "image": "sources/textbook_page_16.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "JOR02",
+      "section_ar": "مظاهر الحضارة اليونانية في الأردن",
+      "text_ar": "بعد وفاة الإسكندر وانقسام الإمبراطورية، كان الأردن من نصيب بطليموس الذي انفصل بمصر وأجزاء من بلاد الشام وأسس المملكة البطلمية وعاصمتها الإسكندرية.",
+      "source": {
+        "printed_page": 16,
+        "uploaded_pdf_page": 9,
+        "extracted_pdf_page": 5,
+        "image": "sources/textbook_page_16.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "JOR03",
+      "section_ar": "مظاهر الحضارة اليونانية في الأردن",
+      "text_ar": "يذكر الدرس احتلال ربة عمون (عمان) عام 300 ق.م. وتسميتها فيما بعد فيلادلفيا نسبة إلى بطليموس فيلادلفيوس.",
+      "source": {
+        "printed_page": 16,
+        "uploaded_pdf_page": 9,
+        "extracted_pdf_page": 5,
+        "image": "sources/textbook_page_16.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "Preserve the supplied chronology and wording; do not add an exact renaming date or conflate different Ptolemies into an invented personal scene."
+    },
+    {
+      "fact_id": "JOR04",
+      "section_ar": "مظاهر الحضارة اليونانية في الأردن",
+      "text_ar": "من المدن التي يذكرها الدرس: طبقة فحل (بيلا)، وأم قيس (جادارا)، وجرش (جراسا)، وحسبان (حشبون).",
+      "source": {
+        "printed_page": 16,
+        "uploaded_pdf_page": 9,
+        "extracted_pdf_page": 5,
+        "image": "sources/textbook_page_16.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "These are source spellings. No need to add modern coordinates or redraw a map from memory."
+    },
+    {
+      "fact_id": "JOR05",
+      "section_ar": "مظاهر الحضارة اليونانية في الأردن",
+      "text_ar": "يذكر الدرس أن الحروب والكوارث الطبيعية دمرت معظم تلك الأبنية، ويبرز قصر عراق الأمير (قصر العبد) بوصفه الأثر الباقي في عرضه.",
+      "source": {
+        "printed_page": 16,
+        "uploaded_pdf_page": 9,
+        "extracted_pdf_page": 5,
+        "image": "sources/textbook_page_16.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "The paragraph contains a broad survival claim. Keep the complete statement visible in the source; do not turn it into an unsourced universal claim that no other Greek-period evidence exists."
+    },
+    {
+      "fact_id": "JOR06",
+      "section_ar": "مظاهر الحضارة اليونانية في الأردن",
+      "text_ar": "يصف الدرس ضعف الدولة اليونانية في القرن الأول قبل الميلاد بسبب الحروب، ثم ظهور الإمبراطورية الرومانية بعد احتلال القائد بومبيوس لبلاد الشام.",
+      "source": {
+        "printed_page": 16,
+        "uploaded_pdf_page": 9,
+        "extracted_pdf_page": 5,
+        "image": "sources/textbook_page_16.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "Retain the lesson framing without supplying dates or reconciling its wording with external chronology."
+    },
+    {
+      "fact_id": "JOR07",
+      "section_ar": "مظاهر الحضارة اليونانية في الأردن",
+      "text_ar": "قصر عراق الأمير (قصر العبد): موقع أثري على بعد نصف كيلومتر جنوب بلدة عراق الأمير التي تبعد 35 كم غرب عمان. يعود تاريخه، وفق صندوق المعلومات، إلى العصر الهلنستي في القرن الثاني قبل الميلاد.",
+      "source": {
+        "printed_page": 16,
+        "uploaded_pdf_page": 9,
+        "extracted_pdf_page": 5,
+        "image": "sources/textbook_page_16.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "REV01",
+      "section_ar": "مراجعة",
+      "text_ar": "تطلب المراجعة مثالين للمحاصيل والفلاسفة ومزايا المدينة؛ وترتيب الطبقات؛ وعناصر المسرح؛ وحقوق المرأة؛ وشرح التراجيديا والكوميديا.",
+      "source": {
+        "printed_page": 17,
+        "uploaded_pdf_page": 10,
+        "extracted_pdf_page": 6,
+        "image": "sources/textbook_page_17.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "REV02",
+      "section_ar": "مراجعة",
+      "text_ar": "تطلب المراجعة تفسير تطور التجارة والبراعة في المسرح وتعدد الآلهة، وتناقش دور الزراعة في الحضارة والاستقرار الإنساني.",
+      "source": {
+        "printed_page": 17,
+        "uploaded_pdf_page": 10,
+        "extracted_pdf_page": 6,
+        "image": "sources/textbook_page_17.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": ""
+    },
+    {
+      "fact_id": "REV03",
+      "section_ar": "مراجعة / أنشطة بحثية",
+      "text_ar": "تطلب الأنشطة بحثاً خارجياً عن المسرح اليوناني وعن قصة حصان طروادة، ثم عرضاً وتمثيلاً. لا تحتوي الصفحات المرفقة على قصة حصان طروادة نفسها.",
+      "source": {
+        "printed_page": 17,
+        "uploaded_pdf_page": 10,
+        "extracted_pdf_page": 6,
+        "image": "sources/textbook_page_17.png"
+      },
+      "status": "textbook_claim_not_independently_verified",
+      "note": "Do not invent or implement a Trojan Horse mission. This is optional outside-source homework and is out of scope for this pack."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+Extend the EXISTING History3DGame with textbook Lesson 2. Do not create another project.
+
+Read the context pack in this project first:
+lesson2_context/00_START_HERE.md
+Then read its textbook context, gameplay plan, voice policy, Arabic dialogue draft, acceptance tests and reference page images.
+
+The source is the attached Arabic textbook lesson "الحياة العامة في الحضارة اليونانية", printed pages 12–17. The extracted source PDF and readable page images are already inside the context pack. Treat the book as the content basis. The new quests and fictional guides are adaptation, not extra historical evidence.
+
+NON-NEGOTIABLE:
+1. Preserve the existing approved visual quality, Lesson 1, characters, controller, historical map, mission flow and Arabic subtitles. Reuse/extend current systems. You may redesign or extend areas for Lesson 2 if old gameplay remains intact. Do not replace the approved world with another blockout.
+2. NO VOICES FOR NOW, across BOTH lessons. I intentionally moved audio/final_voice outside the project. Do not ask for it back, regenerate recordings, delete backups or mute music/effects globally. NPCs/narrator/player use Arabic subtitles and existing gestures. Remove mandatory missing-audio preload/scene dependencies; guard optional loads. No waiting for audio that does not exist, no skipped subtitles, stuck cutscenes or missing-file spam.
+3. Preserve the old voice system and stable mappings for later. Keep existing text/IDs whenever possible. New dialogue uses stable l2_* IDs, empty audio paths and deferred voice status. Do not overwrite my old VOICE_SCRIPT or renumber old lines. No new audio generation.
+4. Historical facts must follow the supplied pages, including political life, agriculture/industry/trade, society, religion, theatre, philosophy/history, architecture/sculpture, sport and Greek influence in Jordan. Preserve source terms. Broad textbook claims stay attributed. Do not invent an unsupplied Trojan Horse chapter or falsely attributed philosopher quotations.
+5. Make a playable extension, not just a document or a chain of static quizzes. Follow the pack's connected city route with product-to-market interaction, a theatre rehearsal, a short sports activity and the Jordan heritage sequence. Keep NPC movement/gestures, clear objectives and clean camera transitions. No visible void or collision regressions.
+6. Target roughly 10–15 additional minutes as a proposal, not a promised measured duration. Keep the original chapter available. Add an Arabic Lesson 2 entry after Lesson 1 plus direct chapter selection for testing. Use the record/book framing so different historical periods are not portrayed as one literal day or lifetime.
+7. Only existing/free assets and installed tools. No paid services, new engine, live APIs, voice generation or giant new open world. Ask only if a genuinely essential missing asset blocks progress; otherwise use a compact presentation at approved quality.
+
+IMPLEMENTATION:
+First inspect the actual project and make a reversible backup of modified files without deleting or overwriting old work. Give a SHORT plan, then implement incrementally. First prove both the existing game and its cinematics work with the voice directory absent. Then add the full Lesson 2 route and ending, adapting the draft JSON to the existing runtime schema. The context pack is developer reference; put real runtime data in the correct project folders.
+
+After implementation create:
+- a short Lesson 2 implementation/coverage report mapping source topics to scenes or activities;
+- a separate VOICE_SCRIPT_LESSON2.md from the ACTUAL final runtime dialogue, for later recording;
+- a voice change log only if any old line genuinely needed modification.
+
+Test old Lesson 1, entry to Lesson 2, every new activity, chapter replay, all subtitle/camera transitions and the final ending with NO recorded voices present. Keep the player permanently unvoiced. Report actual tests separately from untested assumptions. Do not claim a visual playtest if you only ran import/parser checks.
+
+Do not stop after writing a plan. Implement the playable extension while preserving the current game.

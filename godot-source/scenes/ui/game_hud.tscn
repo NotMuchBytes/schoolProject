@@ -1,0 +1,350 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/game_hud.gd" id="1_hud"]
+
+[sub_resource type="StyleBoxFlat" id="ObjectivePanelStyle"]
+bg_color = Color(0.035, 0.05, 0.075, 0.90)
+border_width_left = 4
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.77, 0.63, 0.3, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.38)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="DialoguePanelStyle"]
+bg_color = Color(0.018, 0.024, 0.036, 0.925)
+border_width_left = 2
+border_width_top = 3
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.69, 0.5, 0.235, 0.94)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.62)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="SpeakerBandStyle"]
+bg_color = Color(0.19, 0.13, 0.075, 0.78)
+border_width_right = 4
+border_color = Color(0.86, 0.65, 0.29, 0.96)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 13.0
+content_margin_top = 5.0
+content_margin_right = 13.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="KeyHintStyle"]
+bg_color = Color(0.09, 0.1, 0.115, 0.72)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.56, 0.48, 0.33, 0.58)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 9.0
+content_margin_top = 3.0
+content_margin_right = 9.0
+content_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="PromptStyle"]
+bg_color = Color(0.025, 0.035, 0.055, 0.82)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9, 0.72, 0.34, 0.65)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 6
+content_margin_left = 18.0
+content_margin_top = 7.0
+content_margin_right = 18.0
+content_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="CompletionStyle"]
+bg_color = Color(0.08, 0.12, 0.11, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9, 0.73, 0.3, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.42)
+shadow_size = 9
+
+[node name="GameHUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="ObjectivePanel" type="PanelContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -306.0
+offset_top = 22.0
+offset_right = -22.0
+offset_bottom = 152.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("ObjectivePanelStyle")
+
+[node name="Margin" type="MarginContainer" parent="ObjectivePanel"]
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="ObjectivePanel/Margin"]
+layout_direction = 3
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="ObjectivePanel/Margin/VBox"]
+layout_direction = 3
+theme_override_colors/font_color = Color(0.95, 0.82, 0.48, 1)
+theme_override_font_sizes/font_size = 18
+text = "المهمة الحالية"
+text_direction = 2
+horizontal_alignment = 2
+
+[node name="MissionName" type="Label" parent="ObjectivePanel/Margin/VBox"]
+layout_direction = 3
+theme_override_colors/font_color = Color(1, 0.94, 0.8, 1)
+theme_override_font_sizes/font_size = 19
+text = "رسالة إلى المعبد"
+text_direction = 2
+horizontal_alignment = 2
+
+[node name="Objective" type="Label" parent="ObjectivePanel/Margin/VBox"]
+layout_direction = 3
+theme_override_colors/font_color = Color(0.95, 0.95, 0.93, 1)
+theme_override_font_sizes/font_size = 16
+text = "تحدث إلى المعلّم"
+text_direction = 2
+horizontal_alignment = 2
+
+[node name="InteractionPrompt" type="Label" parent="."]
+layout_direction = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -102.0
+offset_right = 160.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.88, 0.5, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("PromptStyle")
+text = "اضغط E للتحدث"
+text_direction = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialoguePanel" type="PanelContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -455.0
+offset_top = -230.0
+offset_right = 455.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("DialoguePanelStyle")
+
+[node name="Margin" type="MarginContainer" parent="DialoguePanel"]
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="DialoguePanel/Margin"]
+layout_direction = 3
+mouse_filter = 2
+theme_override_constants/separation = 7
+
+[node name="Ornament" type="HBoxContainer" parent="DialoguePanel/Margin/VBox"]
+layout_direction = 1
+custom_minimum_size = Vector2(0, 12)
+mouse_filter = 2
+theme_override_constants/separation = 9
+
+[node name="LeftRule" type="ColorRect" parent="DialoguePanel/Margin/VBox/Ornament"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+color = Color(0.49, 0.37, 0.2, 0.52)
+
+[node name="Motif" type="Label" parent="DialoguePanel/Margin/VBox/Ornament"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.69, 0.53, 0.28, 0.78)
+theme_override_font_sizes/font_size = 10
+text = "—  ΕΛΛΑΣ  —"
+text_direction = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightRule" type="ColorRect" parent="DialoguePanel/Margin/VBox/Ornament"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+color = Color(0.49, 0.37, 0.2, 0.52)
+
+[node name="Speaker" type="Label" parent="DialoguePanel/Margin/VBox"]
+layout_direction = 3
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.43, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.72)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("SpeakerBandStyle")
+text = "المعلّم"
+text_direction = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Dialogue" type="Label" parent="DialoguePanel/Margin/VBox"]
+layout_direction = 3
+custom_minimum_size = Vector2(0, 78)
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.965, 0.955, 0.91, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.74)
+theme_override_constants/line_spacing = 5
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 21
+text = "مرحبًا بك."
+text_direction = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Footer" type="HBoxContainer" parent="DialoguePanel/Margin/VBox"]
+layout_direction = 1
+custom_minimum_size = Vector2(0, 26)
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="InputHint" type="Label" parent="DialoguePanel/Margin/VBox/Footer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.74, 0.75, 0.74, 0.9)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("KeyHintStyle")
+text = "E   •   Enter   •   Space"
+text_direction = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="DialoguePanel/Margin/VBox/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="ContinueAction" type="HBoxContainer" parent="DialoguePanel/Margin/VBox/Footer"]
+layout_direction = 1
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 7
+
+[node name="ContinueIndicator" type="Label" parent="DialoguePanel/Margin/VBox/Footer/ContinueAction"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.94, 0.7, 0.31, 1)
+theme_override_font_sizes/font_size = 17
+text = "◂"
+text_direction = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueHint" type="Label" parent="DialoguePanel/Margin/VBox/Footer/ContinueAction"]
+layout_direction = 3
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.86, 0.83, 0.72, 0.94)
+theme_override_font_sizes/font_size = 14
+text = "متابعة"
+text_direction = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CompletionPanel" type="PanelContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 300.0
+offset_top = 42.0
+offset_right = -300.0
+offset_bottom = 116.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("CompletionStyle")
+
+[node name="Margin" type="MarginContainer" parent="CompletionPanel"]
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 12
+
+[node name="Message" type="Label" parent="CompletionPanel/Margin"]
+layout_direction = 3
+theme_override_colors/font_color = Color(1, 0.88, 0.48, 1)
+theme_override_font_sizes/font_size = 22
+text = "تم إكمال المهمة: رسالة إلى المعبد"
+text_direction = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CutsceneHint" type="Label" parent="."]
+layout_direction = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -48.0
+offset_right = -24.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.82, 0.84, 0.87, 0.86)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 14
+text = "Enter لتخطي السطر  •  Esc لتخطي المشهد"
+text_direction = 2
+horizontal_alignment = 2

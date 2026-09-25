@@ -1,0 +1,390 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/story/historical_map_level.gd" id="1_level"]
+[ext_resource type="Script" path="res://scripts/story/historical_map_view.gd" id="2_map"]
+
+[sub_resource type="StyleBoxFlat" id="HeaderStyle"]
+bg_color = Color(0.025, 0.035, 0.055, 0.96)
+border_width_bottom = 2
+border_color = Color(0.76, 0.61, 0.3, 0.9)
+shadow_color = Color(0, 0, 0, 0.42)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="MapFrameStyle"]
+bg_color = Color(0.10, 0.055, 0.022, 0.98)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.76, 0.55, 0.24, 0.96)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.52)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="NarrationStyle"]
+bg_color = Color(0.026, 0.037, 0.06, 0.97)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.82, 0.68, 0.38, 0.96)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="LegendStyle"]
+bg_color = Color(0.12, 0.07, 0.03, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.86, 0.67, 0.32, 0.86)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="EndingStyle"]
+bg_color = Color(0.025, 0.035, 0.058, 0.98)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.88, 0.70, 0.32, 0.96)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.62)
+shadow_size = 18
+
+[node name="HistoricalMap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_level")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012, 0.018, 0.03, 1)
+mouse_filter = 2
+
+[node name="Header" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 94.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("HeaderStyle")
+
+[node name="Margin" type="MarginContainer" parent="Header"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="Header/Margin"]
+layout_mode = 2
+layout_direction = 3
+theme_override_constants/separation = 2
+
+[node name="ChapterTitle" type="Label" parent="Header/Margin/VBox"]
+layout_mode = 2
+layout_direction = 3
+theme_override_colors/font_color = Color(1, 0.82, 0.42, 1)
+theme_override_font_sizes/font_size = 29
+text = "حملة الإسكندر الأكبر"
+text_direction = 2
+horizontal_alignment = 1
+
+[node name="ChapterSubtitle" type="Label" parent="Header/Margin/VBox"]
+layout_mode = 2
+layout_direction = 3
+theme_override_colors/font_color = Color(0.86, 0.88, 0.9, 1)
+theme_override_font_sizes/font_size = 17
+text = "من اليونان إلى أقاليم الإمبراطورية الفارسية"
+text_direction = 2
+horizontal_alignment = 1
+
+[node name="MapFrame" type="PanelContainer" parent="."]
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -430.0
+offset_top = 96.0
+offset_right = 430.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("MapFrameStyle")
+
+[node name="Margin" type="MarginContainer" parent="MapFrame"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MapView" type="Control" parent="MapFrame/Margin"]
+clip_contents = true
+custom_minimum_size = Vector2(860, 330)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("2_map")
+
+[node name="TimelineLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 122.0
+offset_right = 330.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(1, 0.82, 0.42, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 18
+text = "مسار الحملة  ٠ / ٣"
+text_direction = 2
+
+[node name="DivisionLegend" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -390.0
+offset_top = 126.0
+offset_right = -62.0
+offset_bottom = 305.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("LegendStyle")
+
+[node name="Margin" type="MarginContainer" parent="DivisionLegend"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="DivisionLegend/Margin"]
+layout_mode = 2
+layout_direction = 3
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="DivisionLegend/Margin/VBox"]
+layout_mode = 2
+layout_direction = 3
+theme_override_colors/font_color = Color(1, 0.84, 0.52, 1)
+theme_override_font_sizes/font_size = 17
+text = "الممالك الكبرى"
+text_direction = 2
+horizontal_alignment = 2
+
+[node name="Antigonus" type="Label" parent="DivisionLegend/Margin/VBox"]
+modulate = Color(1, 1, 1, 0.26)
+layout_mode = 2
+layout_direction = 3
+theme_override_colors/font_color = Color(0.48, 0.82, 0.55, 1)
+theme_override_font_sizes/font_size = 15
+text = "أنتيغونوس — آسيا الصغرى"
+text_direction = 2
+horizontal_alignment = 2
+
+[node name="Ptolemy" type="Label" parent="DivisionLegend/Margin/VBox"]
+modulate = Color(1, 1, 1, 0.26)
+layout_mode = 2
+layout_direction = 3
+theme_override_colors/font_color = Color(0.78, 0.55, 0.88, 1)
+theme_override_font_sizes/font_size = 15
+text = "بطليموس — مصر وجزء من بلاد الشام\nالعاصمة: الإسكندرية"
+text_direction = 2
+horizontal_alignment = 2
+
+[node name="Seleucus" type="Label" parent="DivisionLegend/Margin/VBox"]
+modulate = Color(1, 1, 1, 0.26)
+layout_mode = 2
+layout_direction = 3
+theme_override_colors/font_color = Color(1, 0.58, 0.56, 1)
+theme_override_font_sizes/font_size = 15
+text = "سلوقس — بقية بلاد الشام والعراق وفارس\nالعاصمة: أنطاكية"
+text_direction = 2
+horizontal_alignment = 2
+
+[node name="NarrationPanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -430.0
+offset_top = -166.0
+offset_right = 430.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("NarrationStyle")
+
+[node name="Margin" type="MarginContainer" parent="NarrationPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="NarrationPanel/Margin"]
+layout_mode = 2
+layout_direction = 3
+theme_override_constants/separation = 6
+
+[node name="Speaker" type="Label" parent="NarrationPanel/Margin/VBox"]
+layout_mode = 2
+layout_direction = 3
+theme_override_colors/font_color = Color(1, 0.78, 0.34, 1)
+theme_override_font_sizes/font_size = 19
+text = "الراوي"
+text_direction = 2
+horizontal_alignment = 2
+
+[node name="Text" type="Label" parent="NarrationPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+layout_direction = 3
+theme_override_colors/font_color = Color(0.96, 0.96, 0.93, 1)
+theme_override_font_sizes/font_size = 19
+text = "انطلقت الحملة من اليونان وعبرت إلى آسيا الصغرى."
+text_direction = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AdvanceHint" type="Label" parent="NarrationPanel/Margin/VBox"]
+layout_mode = 2
+layout_direction = 3
+theme_override_colors/font_color = Color(0.67, 0.7, 0.75, 1)
+theme_override_font_sizes/font_size = 13
+text = "E / Enter / Space للتسريع  •  Esc لتخطي العرض"
+text_direction = 2
+horizontal_alignment = 0
+
+[node name="EndingOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.008, 0.012, 0.024, 0.88)
+
+[node name="Center" type="CenterContainer" parent="EndingOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EndingPanel" type="PanelContainer" parent="EndingOverlay/Center"]
+custom_minimum_size = Vector2(680, 500)
+layout_mode = 2
+theme_override_styles/panel = SubResource("EndingStyle")
+
+[node name="Margin" type="MarginContainer" parent="EndingOverlay/Center/EndingPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="EndingOverlay/Center/EndingPanel/Margin"]
+layout_mode = 2
+layout_direction = 3
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Title" type="Label" parent="EndingOverlay/Center/EndingPanel/Margin/VBox"]
+layout_mode = 2
+layout_direction = 3
+theme_override_colors/font_color = Color(1, 0.80, 0.35, 1)
+theme_override_font_sizes/font_size = 42
+text = "اكتمل الفصل الأول"
+text_direction = 2
+horizontal_alignment = 1
+
+[node name="Hellenistic" type="Label" parent="EndingOverlay/Center/EndingPanel/Margin/VBox"]
+layout_mode = 2
+layout_direction = 3
+theme_override_colors/font_color = Color(0.94, 0.73, 0.86, 1)
+theme_override_font_sizes/font_size = 26
+text = "الحضارة الهلنستية"
+text_direction = 2
+horizontal_alignment = 1
+
+[node name="Summary" type="Label" parent="EndingOverlay/Center/EndingPanel/Margin/VBox"]
+layout_mode = 2
+layout_direction = 3
+theme_override_colors/font_color = Color(0.9, 0.91, 0.91, 1)
+theme_override_font_sizes/font_size = 18
+text = "عرفتَ كيف نشأت المدن واتسعت الإمبراطوريات. لكن الحروب والملوك لا يروون القصة كاملة... كيف عاش الناس؟"
+text_direction = 2
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="EndingOverlay/Center/EndingPanel/Margin/VBox"]
+layout_mode = 2
+layout_direction = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ContinueButton" type="Button" parent="EndingOverlay/Center/EndingPanel/Margin/VBox/Buttons"]
+custom_minimum_size = Vector2(340, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 19
+text = "متابعة إلى الدرس الثاني"
+text_direction = 2
+
+[node name="ReplayButton" type="Button" parent="EndingOverlay/Center/EndingPanel/Margin/VBox/Buttons"]
+custom_minimum_size = Vector2(340, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 18
+text = "إعادة الدرس الأول"
+text_direction = 2
+
+[node name="MenuButton" type="Button" parent="EndingOverlay/Center/EndingPanel/Margin/VBox/Buttons"]
+custom_minimum_size = Vector2(340, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 18
+text = "العودة إلى قائمة الدروس"
+text_direction = 2
+
+[node name="QuitButton" type="Button" parent="EndingOverlay/Center/EndingPanel/Margin/VBox/Buttons"]
+custom_minimum_size = Vector2(340, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 18
+text = "خروج"
+text_direction = 2
+
+[connection signal="pressed" from="EndingOverlay/Center/EndingPanel/Margin/VBox/Buttons/ContinueButton" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="EndingOverlay/Center/EndingPanel/Margin/VBox/Buttons/ReplayButton" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="EndingOverlay/Center/EndingPanel/Margin/VBox/Buttons/MenuButton" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="EndingOverlay/Center/EndingPanel/Margin/VBox/Buttons/QuitButton" to="." method="_on_quit_pressed"]

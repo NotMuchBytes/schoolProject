@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/characters/moving_recipient_npc.tscn" id="1_base"]
+[ext_resource type="Script" path="res://scripts/characters/ambient_npc_controller.gd" id="2_ambient"]
+
+[node name="AmbientRecipientNPC" instance=ExtResource("1_base")]
+script = ExtResource("2_ambient")
+interaction_enabled = false
+patrol_enabled = true
+
+[node name="AmbientSpeech" type="Label3D" parent="."]
+position = Vector3(0, 2.48, 0)
+billboard = 1
+no_depth_test = true
+fixed_size = true
+font_size = 23
+outline_size = 7
+modulate = Color(1, 0.94, 0.78, 0.96)
+outline_modulate = Color(0.035, 0.04, 0.055, 0.94)
+text_direction = 2
+horizontal_alignment = 1
+visibility_range_end = 15.0

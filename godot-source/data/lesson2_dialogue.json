@@ -1,0 +1,837 @@
+{
+  "schema_version": 1,
+  "language": "ar",
+  "default_speech_enabled": false,
+  "status": "Frozen current Chapter 2 implementation; subtitles active and recordings deferred.",
+  "source_policy": "Factual clauses are source-bound paraphrases. Named historical figures are subjects of exhibits, not impersonated with invented attributed quotations.",
+  "preserve_existing_lesson1_text_and_ids": true,
+  "lines": [
+    {
+      "line_id": "l2_intro_001",
+      "speaker_id": "l2_narrator",
+      "speaker_name_ar": "الراوي",
+      "text_ar": "عرفتَ كيف نشأت المدن واتسعت الإمبراطوريات. والآن، لنفتح سجلاً آخر: كيف عاش الناس؟",
+      "source_fact_ids": [],
+      "content_type": "fictional_transition",
+      "required": true,
+      "gesture": "none",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_intro_002",
+      "speaker_id": "l2_narrator",
+      "speaker_name_ar": "الراوي",
+      "text_ar": "تجمع هذه الرحلة مشاهد من فترات مختلفة؛ إنها رحلة في السجل، وليست أحداث يوم واحد من التاريخ.",
+      "source_fact_ids": [],
+      "content_type": "fictional_transition",
+      "required": true,
+      "gesture": "none",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_intro_003",
+      "speaker_id": "l2_guide",
+      "speaker_name_ar": "دليل المدينة",
+      "text_ar": "ساعدني في إعداد سجل الحياة العامة. سنبدأ بالساحة، ثم نتتبع أعمال الناس وفنونهم.",
+      "source_fact_ids": [],
+      "content_type": "fictional_task",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_politics_001",
+      "speaker_id": "l2_civic_guide",
+      "speaker_name_ar": "دليل الساحة",
+      "text_ar": "لم يبق الحكم على صورة واحدة. كانت معظم المدن تحكم بنظام ملكي، وكان الملك يمثل السلطة العليا.",
+      "source_fact_ids": [
+        "POL01"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_politics_002",
+      "speaker_id": "l2_civic_guide",
+      "speaker_name_ar": "دليل الساحة",
+      "text_ar": "ثم ظهرت أنظمة أخرى: الديمقراطية في أثينا، والحكم العسكري الصارم في إسبرطة، والحكم الاستبدادي في بعض المدن.",
+      "source_fact_ids": [
+        "POL02",
+        "POL03"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_politics_003",
+      "speaker_id": "l2_civic_guide",
+      "speaker_name_ar": "دليل الساحة",
+      "text_ar": "رتب بطاقات الأنظمة في السجل، ثم قارن من يتولى الحكم في كل وصف.",
+      "source_fact_ids": [],
+      "content_type": "fictional_task",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_politics_004",
+      "speaker_id": "l2_civic_guide",
+      "speaker_name_ar": "دليل الساحة",
+      "text_ar": "عكست هذه الأنظمة تطور الفكر السياسي والاجتماعي، وأثرت في النظم التي تلتها.",
+      "source_fact_ids": [
+        "POL04"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_farm_001",
+      "speaker_id": "l2_farmer",
+      "speaker_name_ar": "المزارع",
+      "text_ar": "هذه حبوب وزيتون وعنب. يذكر الدرس أن التربة الخصبة والمياه والمناخ المعتدل ساعدت على زراعتها.",
+      "source_fact_ids": [
+        "AGR01"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_farm_002",
+      "speaker_id": "l2_farmer",
+      "speaker_name_ar": "المزارع",
+      "text_ar": "وهناك مطاحن للحبوب ومعاصر للزيتون. واهتم الناس أيضاً بتربية الأغنام والأبقار.",
+      "source_fact_ids": [
+        "AGR02"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_farm_003",
+      "speaker_id": "l2_farmer",
+      "speaker_name_ar": "المزارع",
+      "text_ar": "تأمل المنتجات الثلاثة، ثم اتبعها إلى الورشة والسوق.",
+      "source_fact_ids": [],
+      "content_type": "fictional_task",
+      "required": true,
+      "gesture": "point",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_workshop_001",
+      "speaker_id": "l2_artisan",
+      "speaker_name_ar": "الحرفي",
+      "text_ar": "ازدهرت الحرف مع توافر المعادن والأخشاب وانتشار الأسواق، ومع التنافس الصناعي مع حضارات مجاورة كالفينيقية.",
+      "source_fact_ids": [
+        "IND01"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_workshop_002",
+      "speaker_id": "l2_artisan",
+      "speaker_name_ar": "الحرفي",
+      "text_ar": "صنع اليونانيون الأسلحة والحلي والسفن والأدوات الزراعية والأواني والفخار.",
+      "source_fact_ids": [
+        "IND02"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_workshop_003",
+      "speaker_id": "l2_artisan",
+      "speaker_name_ar": "الحرفي",
+      "text_ar": "اختر منتجاً من المعروضات وافحص مادته. لا تحتاج إلى صنع سلاح أو خوض قتال.",
+      "source_fact_ids": [],
+      "content_type": "fictional_task",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_trade_001",
+      "speaker_id": "l2_merchant",
+      "speaker_name_ar": "التاجر",
+      "text_ar": "السوق والمنتجات المحلية ينشطان التجارة الداخلية. أما البحر فيفتح طريق التجارة الخارجية.",
+      "source_fact_ids": [
+        "TRA01",
+        "TRA02"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_trade_002",
+      "speaker_id": "l2_merchant",
+      "speaker_name_ar": "التاجر",
+      "text_ar": "اتصل اليونان بحضارات أخرى، وشكلت مستعمراتهم أسواقاً ومراكز لشحن البضائع.",
+      "source_fact_ids": [
+        "TRA02"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_trade_003",
+      "speaker_id": "l2_merchant",
+      "speaker_name_ar": "التاجر",
+      "text_ar": "ضع بطاقة السوق عند وجهة التجارة الداخلية، وبطاقة المرفأ عند وجهة التجارة الخارجية.",
+      "source_fact_ids": [],
+      "content_type": "fictional_task",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_society_001",
+      "speaker_id": "l2_scribe",
+      "speaker_name_ar": "كاتب السجل",
+      "text_ar": "من القبيلة، ومع الاستقرار وتطور الحياة، ظهرت القرية ثم توسعت إلى مدن.",
+      "source_fact_ids": [
+        "SOC01"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_society_002",
+      "speaker_id": "l2_scribe",
+      "speaker_name_ar": "كاتب السجل",
+      "text_ar": "يعرض الدرس أربع طبقات: الحاكمة، ثم التجار والأثرياء، ثم العامة، ثم العبيد.",
+      "source_fact_ids": [
+        "SOC02"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_society_003",
+      "speaker_id": "l2_scribe",
+      "speaker_name_ar": "كاتب السجل",
+      "text_ar": "ووفق وصف الدرس، تمتعت الطبقات الثلاث الأولى بحقوق المواطنة، وحرم العبيد من هذه الحقوق.",
+      "source_fact_ids": [
+        "SOC03"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_society_004",
+      "speaker_id": "l2_scribe",
+      "speaker_name_ar": "كاتب السجل",
+      "text_ar": "ويذكر الدرس للمرأة حق امتلاك الأراضي، وحق الميراث، وحق التعليم.",
+      "source_fact_ids": [
+        "SOC04"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_society_005",
+      "speaker_id": "l2_scribe",
+      "speaker_name_ar": "كاتب السجل",
+      "text_ar": "رتب بطاقات الطبقات كما يعرضها الشكل في السجل. نحن نصف هذا المجتمع، ولا نقر حرمان الناس من حقوقهم.",
+      "source_fact_ids": [],
+      "content_type": "fictional_task",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_religion_001",
+      "speaker_id": "l2_temple_guide",
+      "speaker_name_ar": "دليل المعبد",
+      "text_ar": "اعتقد اليونان أن آلهة معينة تتحكم في قوى الطبيعة؛ فصوروها في صور وتماثيل وبنوا لها المعابد.",
+      "source_fact_ids": [
+        "REL01"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_religion_002",
+      "speaker_id": "l2_temple_guide",
+      "speaker_name_ar": "دليل المعبد",
+      "text_ar": "يذكر الدرس زيوس كبير الآلهة، وأبولو إله الشمس، وأثينا آلهة الحكمة.",
+      "source_fact_ids": [
+        "REL02"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_religion_003",
+      "speaker_id": "l2_temple_guide",
+      "speaker_name_ar": "دليل المعبد",
+      "text_ar": "نحن نتعرف إلى معتقداتهم وآثارها في حياتهم. تأمل المعروضات ثم تابع إلى المسرح.",
+      "source_fact_ids": [],
+      "content_type": "fictional_task",
+      "required": true,
+      "gesture": "point",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_theatre_001",
+      "speaker_id": "l2_theatre_director",
+      "speaker_name_ar": "مشرف المسرح",
+      "text_ar": "ارتبط المسرح بالاحتفالات والطقوس لشكر الآلهة على الإنتاج الوفير أو التوسل إليها في سنوات القحط.",
+      "source_fact_ids": [
+        "THR01"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_theatre_002",
+      "speaker_id": "l2_theatre_director",
+      "speaker_name_ar": "مشرف المسرح",
+      "text_ar": "التراجيديا تنتهي بنهاية حزينة، والكوميديا تنتهي بنهاية سعيدة.",
+      "source_fact_ids": [
+        "THR02"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_theatre_003",
+      "speaker_id": "l2_theatre_director",
+      "speaker_name_ar": "مشرف المسرح",
+      "text_ar": "تعرّف إلى الجوقة والأوركسترا وخشبة المسرح والممثلين، ثم شاهد نهايتين قصيرتين.",
+      "source_fact_ids": [
+        "THR03"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "point",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_stage_tragedy_001",
+      "speaker_id": "l2_tragedy_actor",
+      "speaker_name_ar": "ممثل التراجيديا",
+      "text_ar": "بحثت عن صاحبي عند المرفأ، لكن السفينة رحلت، وبقيت وحدي.",
+      "source_fact_ids": [],
+      "content_type": "fictional_theatre_demonstration",
+      "required": true,
+      "gesture": "sad",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_stage_comedy_001",
+      "speaker_id": "l2_comedy_actor",
+      "speaker_name_ar": "ممثل الكوميديا",
+      "text_ar": "ظننت أن صاحبي رحل، فإذا به خلفي يحمل السلة! سنعود معاً.",
+      "source_fact_ids": [],
+      "content_type": "fictional_theatre_demonstration",
+      "required": true,
+      "gesture": "happy",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_theatre_004",
+      "speaker_id": "l2_theatre_director",
+      "speaker_name_ar": "مشرف المسرح",
+      "text_ar": "أي النهايتين حزينة وأيهما سعيدة؟ سجّل الفرق، لا تحفظ حكاية الممثل؛ فهي مثال تمثيلي.",
+      "source_fact_ids": [],
+      "content_type": "fictional_task",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_ideas_001",
+      "speaker_id": "l2_library_guide",
+      "speaker_name_ar": "دليل المكتبة",
+      "text_ar": "أفلاطون مؤسس الفلسفة المثالية، ومن كتبه الجمهورية والقوانين.",
+      "source_fact_ids": [
+        "PHI01"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_ideas_002",
+      "speaker_id": "l2_library_guide",
+      "speaker_name_ar": "دليل المكتبة",
+      "text_ar": "وأرسطو تلميذ أفلاطون ومعلم الإسكندر. يصفه الدرس بمؤسس الفلسفة الواقعية، ويذكر استخدامه المنهج العلمي.",
+      "source_fact_ids": [
+        "PHI02"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_ideas_003",
+      "speaker_id": "l2_library_guide",
+      "speaker_name_ar": "دليل المكتبة",
+      "text_ar": "ومن كتب أرسطو السياسة، وفيه ناقش أنواع الحكومات.",
+      "source_fact_ids": [
+        "PHI02"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_ideas_004",
+      "speaker_id": "l2_library_guide",
+      "speaker_name_ar": "دليل المكتبة",
+      "text_ar": "أما هيرودوت فلقب بأبي التاريخ؛ ويذكر الدرس اعتماده على الأساطير الدينية وكتابته عن اليونان والفرس وغيرهم.",
+      "source_fact_ids": [
+        "HIS01"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_ideas_005",
+      "speaker_id": "l2_library_guide",
+      "speaker_name_ar": "دليل المكتبة",
+      "text_ar": "ضع كل بطاقة مؤلف بجانب العمل أو الوصف الذي يخصه في المعرض.",
+      "source_fact_ids": [],
+      "content_type": "fictional_task",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_architecture_001",
+      "speaker_id": "l2_architect",
+      "speaker_name_ar": "البنّاء",
+      "text_ar": "تصف صفحة العمارة مدينة محاطة بالأسوار، وفي مركزها ساحة عامة فيها المعبد والمسرح، وأبنيتها موزعة بانتظام.",
+      "source_fact_ids": [
+        "ARC02"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "point",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_architecture_002",
+      "speaker_id": "l2_architect",
+      "speaker_name_ar": "البنّاء",
+      "text_ar": "ساعد توافر الرخام على العمارة، واستخدم النحاتون الرخام والبرونز.",
+      "source_fact_ids": [
+        "ARC01",
+        "ARC03"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_architecture_003",
+      "speaker_id": "l2_architect",
+      "speaker_name_ar": "البنّاء",
+      "text_ar": "شملت المنحوتات الآلهة وكبار القادة والشخصيات العسكرية.",
+      "source_fact_ids": [
+        "ARC03"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_architecture_004",
+      "speaker_id": "l2_architect",
+      "speaker_name_ar": "البنّاء",
+      "text_ar": "من هذه الشرفة، حدد السور والساحة والمسرح في المدينة التي زرتها.",
+      "source_fact_ids": [],
+      "content_type": "fictional_task",
+      "required": true,
+      "gesture": "point",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_sport_001",
+      "speaker_id": "l2_coach",
+      "speaker_name_ar": "المدرب",
+      "text_ar": "اهتم اليونانيون بالمصارعة والسباحة وركوب الخيل والجري والصيد، وكانت أثينا مركزاً للألعاب والتمارين.",
+      "source_fact_ids": [
+        "SPT01"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_sport_002",
+      "speaker_id": "l2_coach",
+      "speaker_name_ar": "المدرب",
+      "text_ar": "يذكر الدرس الهوكي والجمباز أيضاً، والمباريات الجماعية والفردية، وحضور الناس للمشاهدة والتشجيع.",
+      "source_fact_ids": [
+        "SPT02"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_sport_003",
+      "speaker_id": "l2_coach",
+      "speaker_name_ar": "المدرب",
+      "text_ar": "وينسب الدرس إلى اليونانيين إقامة الألعاب الأولمبية. جرّب مسار الجري القصير أمامك؛ إنه تدريب داخل رحلتنا.",
+      "source_fact_ids": [
+        "SPT02"
+      ],
+      "content_type": "source_based_adaptation_with_fictional_task",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_jordan_001",
+      "speaker_id": "l2_narrator",
+      "speaker_name_ar": "الراوي",
+      "text_ar": "لنفتح الآن صفحة الأردن من السجل. يربط الدرس خضوعه للحكم اليوناني بحملة الإسكندر على مصر وبلاد الشام عام 332 قبل الميلاد.",
+      "source_fact_ids": [
+        "JOR01"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "none",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_jordan_002",
+      "speaker_id": "l2_jordan_guide",
+      "speaker_name_ar": "دليل الآثار",
+      "text_ar": "بعد وفاة الإسكندر، يذكر الدرس أن الأردن كان من نصيب بطليموس، مؤسس المملكة البطلمية وعاصمتها الإسكندرية.",
+      "source_fact_ids": [
+        "JOR02"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_jordan_003",
+      "speaker_id": "l2_jordan_guide",
+      "speaker_name_ar": "دليل الآثار",
+      "text_ar": "ويذكر احتلال ربة عمون، أي عمان، عام 300 قبل الميلاد، وتسميتها فيما بعد فيلادلفيا نسبة إلى بطليموس فيلادلفيوس.",
+      "source_fact_ids": [
+        "JOR03"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_jordan_004",
+      "speaker_id": "l2_jordan_guide",
+      "speaker_name_ar": "دليل الآثار",
+      "text_ar": "من المدن المذكورة: طبقة فحل، بيلا؛ وأم قيس، جادارا؛ وجرش، جراسا؛ وحسبان، حشبون.",
+      "source_fact_ids": [
+        "JOR04"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_jordan_005",
+      "speaker_id": "l2_jordan_guide",
+      "speaker_name_ar": "دليل الآثار",
+      "text_ar": "تسببت الحروب والكوارث الطبيعية في تدمير معظم الأبنية التي يتحدث عنها الدرس، ويبرز قصر عراق الأمير، أو قصر العبد.",
+      "source_fact_ids": [
+        "JOR05"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_jordan_006",
+      "speaker_id": "l2_jordan_guide",
+      "speaker_name_ar": "دليل الآثار",
+      "text_ar": "يؤرخ صندوق المعلومات قصر العبد بالعصر الهلنستي في القرن الثاني قبل الميلاد، ويحدد موقعه جنوب بلدة عراق الأمير، غرب عمان.",
+      "source_fact_ids": [
+        "JOR07"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_jordan_007",
+      "speaker_id": "l2_jordan_guide",
+      "speaker_name_ar": "دليل الآثار",
+      "text_ar": "ويختتم الدرس بضعف الدولة اليونانية بسبب الحروب، ثم الاحتلال الروماني لبلاد الشام بقيادة بومبيوس.",
+      "source_fact_ids": [
+        "JOR06"
+      ],
+      "content_type": "source_based_adaptation",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_jordan_008",
+      "speaker_id": "l2_jordan_guide",
+      "speaker_name_ar": "دليل الآثار",
+      "text_ar": "طابق أسماء المدن في السجل، ثم افتح بطاقة القصر لتتعرف إلى موقعه وتأريخه.",
+      "source_fact_ids": [],
+      "content_type": "fictional_task",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_ending_001",
+      "speaker_id": "l2_guide",
+      "speaker_name_ar": "دليل المدينة",
+      "text_ar": "اكتمل سجل الحياة: الحكم والعمل والمجتمع والمعتقدات والفنون والرياضة، ثم الآثار في الأردن.",
+      "source_fact_ids": [],
+      "content_type": "fictional_conclusion",
+      "required": true,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_ending_002",
+      "speaker_id": "l2_narrator",
+      "speaker_name_ar": "الراوي",
+      "text_ar": "لم تكن الحضارة حدوداً وحروباً وحدها؛ كانت حياة ناس ومدناً وأعمالاً وأفكاراً.",
+      "source_fact_ids": [],
+      "content_type": "fictional_conclusion",
+      "required": true,
+      "gesture": "none",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_ambient_001",
+      "speaker_id": "l2_farm_worker",
+      "speaker_name_ar": "عامل المزرعة",
+      "text_ar": "ضع الزيتون قرب المعصرة.",
+      "source_fact_ids": [],
+      "content_type": "fictional_ambient",
+      "required": false,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_ambient_002",
+      "speaker_id": "l2_market_carrier",
+      "speaker_name_ar": "حامل بضائع السوق",
+      "text_ar": "هذه الأواني جاهزة للسوق.",
+      "source_fact_ids": [],
+      "content_type": "fictional_ambient",
+      "required": false,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_ambient_003",
+      "speaker_id": "l2_harbour_worker",
+      "speaker_name_ar": "عامل المرفأ",
+      "text_ar": "البضائع عند المرفأ.",
+      "source_fact_ids": [],
+      "content_type": "fictional_ambient",
+      "required": false,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_ambient_004",
+      "speaker_id": "l2_theatre_chorus",
+      "speaker_name_ar": "عضو الجوقة",
+      "text_ar": "هل استعدت الجوقة للمشهد؟",
+      "source_fact_ids": [],
+      "content_type": "fictional_ambient",
+      "required": false,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_ambient_005",
+      "speaker_id": "l2_theatre_stagehand",
+      "speaker_name_ar": "عامل خشبة المسرح",
+      "text_ar": "ابدأ عندما تكون مستعداً.",
+      "source_fact_ids": [],
+      "content_type": "fictional_ambient",
+      "required": false,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    },
+    {
+      "line_id": "l2_ambient_006",
+      "speaker_id": "l2_library_student",
+      "speaker_name_ar": "طالب المكتبة",
+      "text_ar": "بطاقات المؤلفين على الطاولة.",
+      "source_fact_ids": [],
+      "content_type": "fictional_ambient",
+      "required": false,
+      "gesture": "explain",
+      "audio_path": "",
+      "voice_status": "deferred_not_recorded",
+      "context": ""
+    }
+  ]
+}

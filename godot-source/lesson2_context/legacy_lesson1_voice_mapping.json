@@ -1,0 +1,702 @@
+{
+  "status": "Reference mapping from uploaded script and agreed per-character filenames; no current local filesystem or audio-content verification.",
+  "speech_enabled_now": false,
+  "delete_recordings": false,
+  "original_nonplayer_recording_count": 65,
+  "intentionally_silent_player_lines": [
+    {
+      "source_index": 6,
+      "old_filename": "teacher_message_002.ogg",
+      "speaker_id": "player",
+      "text_ar": "إلى المعبد فوق التل؟",
+      "old_audio_path": "res://audio/dialogue/player/teacher_message_002.ogg"
+    },
+    {
+      "source_index": 11,
+      "old_filename": "temple_record_002.ogg",
+      "speaker_id": "player",
+      "text_ar": "قال إنك ستطلعني على سجل المدن.",
+      "old_audio_path": "res://audio/dialogue/player/temple_record_002.ogg"
+    },
+    {
+      "source_index": 19,
+      "old_filename": "athens_citizen_002.ogg",
+      "speaker_id": "player",
+      "text_ar": "إذن القرار لا يصدر من شخص واحد.",
+      "old_audio_path": "res://audio/dialogue/player/athens_citizen_002.ogg"
+    },
+    {
+      "source_index": 24,
+      "old_filename": "sparta_trainer_001.ogg",
+      "speaker_id": "player",
+      "text_ar": "تتحرك الصفوف كأنها جسد واحد.",
+      "old_audio_path": "res://audio/dialogue/player/sparta_trainer_001.ogg"
+    },
+    {
+      "source_index": 27,
+      "old_filename": "sparta_trainer_004.ogg",
+      "speaker_id": "player",
+      "text_ar": "تحول التنافس إلى قتال؟",
+      "old_audio_path": "res://audio/dialogue/player/sparta_trainer_004.ogg"
+    },
+    {
+      "source_index": 37,
+      "old_filename": "alexander_briefing_002.ogg",
+      "speaker_id": "player",
+      "text_ar": "إلى أين يقود هذا الطريق؟",
+      "old_audio_path": "res://audio/dialogue/player/alexander_briefing_002.ogg"
+    }
+  ],
+  "mappings": [
+    {
+      "source_index": 1,
+      "old_filename": "village_opening_001.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "في أرض اليونان، تلتقي الجبال بالبحر، وتنتشر الجزر حول السواحل.",
+      "old_audio_path": "res://audio/dialogue/narrator/village_opening_001.ogg",
+      "old_line_id": "village_opening_001",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_001.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 2,
+      "old_filename": "village_opening_002.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "فصلت الطرق الجبلية بين المستوطنات، وجعلت التواصل بينها صعبًا.",
+      "old_audio_path": "res://audio/dialogue/narrator/village_opening_002.ogg",
+      "old_line_id": "village_opening_002",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_002.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 3,
+      "old_filename": "village_opening_003.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "لهذا نمت مدن مستقلة، لكل مدينة منها طريقها وشؤونها.",
+      "old_audio_path": "res://audio/dialogue/narrator/village_opening_003.ogg",
+      "old_line_id": "village_opening_003",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_003.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 4,
+      "old_filename": "village_opening_004.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "وهنا تبدأ رحلة رسول شاب يحمل رسالة صغيرة إلى تاريخ كبير.",
+      "old_audio_path": "res://audio/dialogue/narrator/village_opening_004.ogg",
+      "old_line_id": "village_opening_004",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_004.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 5,
+      "old_filename": "teacher_message_001.ogg",
+      "speaker_id": "teacher",
+      "text_ar": "وصلت في الوقت المناسب. خذ هذه الرسالة إلى أمين المعبد.",
+      "old_audio_path": "res://audio/dialogue/teacher/teacher_message_001.ogg",
+      "old_line_id": "teacher_message_001",
+      "recording_path_if_restored": "res://audio/final_voice/teacher/teacher_message_001.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 7,
+      "old_filename": "teacher_message_003.ogg",
+      "speaker_id": "teacher",
+      "text_ar": "نعم. يبدو قريبًا، لكن بلوغ المستوطنات الأخرى قد يتطلب عبور الجبال أو السفر بحرًا.",
+      "old_audio_path": "res://audio/dialogue/teacher/teacher_message_003.ogg",
+      "old_line_id": "teacher_message_003",
+      "recording_path_if_restored": "res://audio/final_voice/teacher/teacher_message_002.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 8,
+      "old_filename": "teacher_message_004.ogg",
+      "speaker_id": "teacher",
+      "text_ar": "صعوبة التواصل جعلت كل مدينة تدير شؤونها، فنشأت مدن مستقلة.",
+      "old_audio_path": "res://audio/dialogue/teacher/teacher_message_004.ogg",
+      "old_line_id": "teacher_message_004",
+      "recording_path_if_restored": "res://audio/final_voice/teacher/teacher_message_003.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 9,
+      "old_filename": "teacher_message_005.ogg",
+      "speaker_id": "teacher",
+      "text_ar": "اتبع الطريق الصاعد، وسلّم الرسالة بنفسك.",
+      "old_audio_path": "res://audio/dialogue/teacher/teacher_message_005.ogg",
+      "old_line_id": "teacher_message_005",
+      "recording_path_if_restored": "res://audio/final_voice/teacher/teacher_message_004.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 10,
+      "old_filename": "temple_record_001.ogg",
+      "speaker_id": "temple_recipient",
+      "text_ar": "رسالة المعلّم؟ وصلت في موعدها.",
+      "old_audio_path": "res://audio/dialogue/temple_recipient/temple_record_001.ogg",
+      "old_line_id": "temple_record_001",
+      "recording_path_if_restored": "res://audio/final_voice/temple/temple_recipient_001.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 12,
+      "old_filename": "temple_record_003.ogg",
+      "speaker_id": "temple_recipient",
+      "text_ar": "سنبدأ من أثينا وإسبرطة؛ مدينتان من العالم اليوناني، لكن لكل منهما طريق مختلف.",
+      "old_audio_path": "res://audio/dialogue/temple_recipient/temple_record_003.ogg",
+      "old_line_id": "temple_record_003",
+      "recording_path_if_restored": "res://audio/final_voice/temple/temple_recipient_002.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 13,
+      "old_filename": "temple_record_004.ogg",
+      "speaker_id": "temple_recipient",
+      "text_ar": "انظر إلى اللوح الحجري. ستأخذك الحكاية إلى ساحتيهما.",
+      "old_audio_path": "res://audio/dialogue/temple_recipient/temple_record_004.ogg",
+      "old_line_id": "temple_record_004",
+      "recording_path_if_restored": "res://audio/final_voice/temple/temple_recipient_003.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 14,
+      "old_filename": "athens_arrival_001.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "في أثينا، أصبحت الساحة مكانًا للنقاش والمشاركة في شؤون المدينة.",
+      "old_audio_path": "res://audio/dialogue/narrator/athens_arrival_001.ogg",
+      "old_line_id": "athens_arrival_001",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_005.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 15,
+      "old_filename": "athens_debate_001.ogg",
+      "speaker_id": "athens",
+      "text_ar": "يريد التجار توسيع الرصيف.",
+      "old_audio_path": "res://audio/dialogue/athens/athens_debate_001.ogg",
+      "old_line_id": "athens_debate_001",
+      "recording_path_if_restored": "res://audio/final_voice/athens/athens_001.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 16,
+      "old_filename": "athens_debate_002.ogg",
+      "speaker_id": "athens",
+      "text_ar": "فلنسمع أصحاب القوارب قبل أن نقرر.",
+      "old_audio_path": "res://audio/dialogue/athens/athens_debate_002.ogg",
+      "old_line_id": "athens_debate_002",
+      "recording_path_if_restored": "res://audio/final_voice/athens/athens_002.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 17,
+      "old_filename": "athens_debate_003.ogg",
+      "speaker_id": "athens",
+      "text_ar": "سيُعرض الأمر على المواطنين في الساحة.",
+      "old_audio_path": "res://audio/dialogue/athens/athens_debate_003.ogg",
+      "old_line_id": "athens_debate_003",
+      "recording_path_if_restored": "res://audio/final_voice/athens/athens_003.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 18,
+      "old_filename": "athens_citizen_001.ogg",
+      "speaker_id": "athens",
+      "text_ar": "في أثينا، نناقش شؤون المدينة علنًا.",
+      "old_audio_path": "res://audio/dialogue/athens/athens_citizen_001.ogg",
+      "old_line_id": "athens_citizen_001",
+      "recording_path_if_restored": "res://audio/final_voice/athens/athens_004.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 20,
+      "old_filename": "athens_citizen_003.ogg",
+      "speaker_id": "athens",
+      "text_ar": "شارك المواطنون في الحكم، وطبّقت أثينا نظامًا ديمقراطيًا.",
+      "old_audio_path": "res://audio/dialogue/athens/athens_citizen_003.ogg",
+      "old_line_id": "athens_citizen_003",
+      "recording_path_if_restored": "res://audio/final_voice/athens/athens_005.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 21,
+      "old_filename": "athens_citizen_004.ogg",
+      "speaker_id": "athens",
+      "text_ar": "لذلك ارتبط اسمها بالحكمة، وعُرفت في درسنا بأنها أول من طبّق الديمقراطية.",
+      "old_audio_path": "res://audio/dialogue/athens/athens_citizen_004.ogg",
+      "old_line_id": "athens_citizen_004",
+      "recording_path_if_restored": "res://audio/final_voice/athens/athens_006.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 22,
+      "old_filename": "sparta_training_001.ogg",
+      "speaker_id": "sparta",
+      "text_ar": "الصف الأول، تقدّم! حافظوا على الإيقاع.",
+      "old_audio_path": "res://audio/dialogue/sparta/sparta_training_001.ogg",
+      "old_line_id": "sparta_training_001",
+      "recording_path_if_restored": "res://audio/final_voice/sparta/sparta_001.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 23,
+      "old_filename": "sparta_training_002.ogg",
+      "speaker_id": "sparta",
+      "text_ar": "القوة في الانضباط.",
+      "old_audio_path": "res://audio/dialogue/sparta/sparta_training_002.ogg",
+      "old_line_id": "sparta_training_002",
+      "recording_path_if_restored": "res://audio/final_voice/sparta/sparta_002.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 25,
+      "old_filename": "sparta_trainer_002.ogg",
+      "speaker_id": "sparta",
+      "text_ar": "في إسبرطة تركزت التربية على القوة والتدريب العسكري منذ الصغر.",
+      "old_audio_path": "res://audio/dialogue/sparta/sparta_trainer_002.ogg",
+      "old_line_id": "sparta_trainer_002",
+      "recording_path_if_restored": "res://audio/final_voice/sparta/sparta_003.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 26,
+      "old_filename": "sparta_trainer_003.ogg",
+      "speaker_id": "sparta",
+      "text_ar": "سعينا إلى التوسع والسيادة، ولذلك اصطدم طريقنا بأثينا.",
+      "old_audio_path": "res://audio/dialogue/sparta/sparta_trainer_003.ogg",
+      "old_line_id": "sparta_trainer_003",
+      "recording_path_if_restored": "res://audio/final_voice/sparta/sparta_004.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 28,
+      "old_filename": "sparta_trainer_005.ogg",
+      "speaker_id": "sparta",
+      "text_ar": "نعم، قاتلت المدينتان خلال القرن الخامس قبل الميلاد.",
+      "old_audio_path": "res://audio/dialogue/sparta/sparta_trainer_005.ogg",
+      "old_line_id": "sparta_trainer_005",
+      "recording_path_if_restored": "res://audio/final_voice/sparta/sparta_005.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 29,
+      "old_filename": "city_state_conflict_001.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "قاتلت أثينا وإسبرطة خلال القرن الخامس قبل الميلاد.",
+      "old_audio_path": "res://audio/dialogue/narrator/city_state_conflict_001.ogg",
+      "old_line_id": "city_state_conflict_001",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_006.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 30,
+      "old_filename": "city_state_conflict_002.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "انتصرت إسبرطة على أثينا، لكن سيادتها لم تدم طويلًا.",
+      "old_audio_path": "res://audio/dialogue/narrator/city_state_conflict_002.ogg",
+      "old_line_id": "city_state_conflict_002",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_007.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 31,
+      "old_filename": "city_state_conflict_003.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "وسرعان ما تغيّر ميزان القوة من جديد.",
+      "old_audio_path": "res://audio/dialogue/narrator/city_state_conflict_003.ogg",
+      "old_line_id": "city_state_conflict_003",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_008.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 32,
+      "old_filename": "macedon_arrival_001.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "بعد أن تبدّل ميزان القوى بين المدن، برزت مقدونيا قوة عسكرية كبرى.",
+      "old_audio_path": "res://audio/dialogue/narrator/macedon_arrival_001.ogg",
+      "old_line_id": "macedon_arrival_001",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_009.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 33,
+      "old_filename": "macedon_officer_001.ogg",
+      "speaker_id": "macedonian_officer",
+      "text_ar": "بعد تغير ميزان القوة، برزت مقدونيا قوة عسكرية كبرى.",
+      "old_audio_path": "res://audio/dialogue/macedonian_officer/macedon_officer_001.ogg",
+      "old_line_id": "macedon_officer_001",
+      "recording_path_if_restored": "res://audio/final_voice/macedonian_officer/macedonian_officer_001.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 34,
+      "old_filename": "macedon_officer_002.ogg",
+      "speaker_id": "macedonian_officer",
+      "text_ar": "أخضع الإسكندر المدن اليونانية لسلطته.",
+      "old_audio_path": "res://audio/dialogue/macedonian_officer/macedon_officer_002.ogg",
+      "old_line_id": "macedon_officer_002",
+      "recording_path_if_restored": "res://audio/final_voice/macedonian_officer/macedonian_officer_002.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 35,
+      "old_filename": "macedon_officer_003.ogg",
+      "speaker_id": "macedonian_officer",
+      "text_ar": "ثم اتجه إلى تحدي الإمبراطورية الفارسية. ينتظرك عند خريطة الحملة.",
+      "old_audio_path": "res://audio/dialogue/macedonian_officer/macedon_officer_003.ogg",
+      "old_line_id": "macedon_officer_003",
+      "recording_path_if_restored": "res://audio/final_voice/macedonian_officer/macedonian_officer_003.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 36,
+      "old_filename": "alexander_briefing_001.ogg",
+      "speaker_id": "alexander",
+      "text_ar": "تتسع الأرض أمامنا، لكن كل حملة تبدأ بطريق واضح.",
+      "old_audio_path": "res://audio/dialogue/alexander/alexander_briefing_001.ogg",
+      "old_line_id": "alexander_briefing_001",
+      "recording_path_if_restored": "res://audio/final_voice/alexander/alexander_001.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 38,
+      "old_filename": "alexander_briefing_003.ogg",
+      "speaker_id": "alexander",
+      "text_ar": "من اليونان نعبر إلى آسيا الصغرى، ثم نواجه قوة فارس.",
+      "old_audio_path": "res://audio/dialogue/alexander/alexander_briefing_003.ogg",
+      "old_line_id": "alexander_briefing_003",
+      "recording_path_if_restored": "res://audio/final_voice/alexander/alexander_002.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 39,
+      "old_filename": "alexander_briefing_004.ogg",
+      "speaker_id": "alexander",
+      "text_ar": "تابع العلامات على الخريطة، وسترى إلى أي مدى امتدت الحملة.",
+      "old_audio_path": "res://audio/dialogue/alexander/alexander_briefing_004.ogg",
+      "old_line_id": "alexander_briefing_004",
+      "recording_path_if_restored": "res://audio/final_voice/alexander/alexander_003.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 40,
+      "old_filename": "campaign_narration_001.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "انطلقت حملة الإسكندر من اليونان وعبرت إلى آسيا الصغرى.",
+      "old_audio_path": "res://audio/dialogue/narrator/campaign_narration_001.ogg",
+      "old_line_id": "campaign_narration_001",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_010.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 41,
+      "old_filename": "campaign_narration_002.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "واجه الإسكندر القوات الفارسية وهزمها، فامتد نفوذه عبر أقاليم الإمبراطورية.",
+      "old_audio_path": "res://audio/dialogue/narrator/campaign_narration_002.ogg",
+      "old_line_id": "campaign_narration_002",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_011.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 42,
+      "old_filename": "campaign_narration_003.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "ووصل التوسع إلى مصر، بعيدًا عن نقطة انطلاق الحملة.",
+      "old_audio_path": "res://audio/dialogue/narrator/campaign_narration_003.ogg",
+      "old_line_id": "campaign_narration_003",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_012.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 43,
+      "old_filename": "campaign_narration_004.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "ثم واصل الإسكندر شرقًا عبر أراضٍ واسعة نحو الهند.",
+      "old_audio_path": "res://audio/dialogue/narrator/campaign_narration_004.ogg",
+      "old_line_id": "campaign_narration_004",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_013.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 44,
+      "old_filename": "campaign_narration_005.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "أصبحت إمبراطوريته شاسعة، ووصلت بين مناطق كثيرة ومتباعدة.",
+      "old_audio_path": "res://audio/dialogue/narrator/campaign_narration_005.ogg",
+      "old_line_id": "campaign_narration_005",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_014.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 45,
+      "old_filename": "campaign_narration_006.ogg",
+      "speaker_id": "macedonian_messenger",
+      "text_ar": "وصل الخبر من بابل... مات الإسكندر.",
+      "old_audio_path": "res://audio/dialogue/narrator/campaign_narration_006.ogg",
+      "old_line_id": "campaign_narration_006",
+      "recording_path_if_restored": "res://audio/final_voice/macedonian_messenger/macedonian_messenger_001.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 46,
+      "old_filename": "campaign_narration_007.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "رحل القائد، وبقيت إمبراطورية واسعة من دون سلطة واحدة تجمعها.",
+      "old_audio_path": "res://audio/dialogue/narrator/campaign_narration_007.ogg",
+      "old_line_id": "campaign_narration_007",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_015.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 47,
+      "old_filename": "division_narration_001.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "بعد موت الإسكندر، انقسمت الإمبراطورية بين كبار قادته.",
+      "old_audio_path": "res://audio/dialogue/narrator/division_narration_001.ogg",
+      "old_line_id": "division_narration_001",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_016.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 48,
+      "old_filename": "division_narration_002.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "أنتيغونوس: آسيا الصغرى.",
+      "old_audio_path": "res://audio/dialogue/narrator/division_narration_002.ogg",
+      "old_line_id": "division_narration_002",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_017.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 49,
+      "old_filename": "division_narration_003.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "بطليموس: مصر وجزء من بلاد الشام، واتخذ الإسكندرية عاصمة.",
+      "old_audio_path": "res://audio/dialogue/narrator/division_narration_003.ogg",
+      "old_line_id": "division_narration_003",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_018.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 50,
+      "old_filename": "division_narration_004.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "سلوقس: بقية بلاد الشام والعراق وفارس، واتخذ أنطاكية عاصمة.",
+      "old_audio_path": "res://audio/dialogue/narrator/division_narration_004.ogg",
+      "old_line_id": "division_narration_004",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_019.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 51,
+      "old_filename": "division_narration_005.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "أشعل الانقسام صراعات جديدة، وأضعف القوى التي ورثت الإمبراطورية.",
+      "old_audio_path": "res://audio/dialogue/narrator/division_narration_005.ogg",
+      "old_line_id": "division_narration_005",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_020.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 52,
+      "old_filename": "hellenistic_narration_001.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "لكن آثار تلك المرحلة لم تنته بانقسام الحكم.",
+      "old_audio_path": "res://audio/dialogue/narrator/hellenistic_narration_001.ogg",
+      "old_line_id": "hellenistic_narration_001",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_021.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 53,
+      "old_filename": "hellenistic_narration_002.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "في مصر وبلاد الشام ومناطق أخرى، امتزجت الثقافة اليونانية بثقافات الشرق.",
+      "old_audio_path": "res://audio/dialogue/narrator/hellenistic_narration_002.ogg",
+      "old_line_id": "hellenistic_narration_002",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_022.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 54,
+      "old_filename": "hellenistic_narration_003.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "ومن هذا الامتزاج نشأت الحضارة الهلنستية.",
+      "old_audio_path": "res://audio/dialogue/narrator/hellenistic_narration_003.ogg",
+      "old_line_id": "hellenistic_narration_003",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_023.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 55,
+      "old_filename": "hellenistic_narration_004.ogg",
+      "speaker_id": "narrator",
+      "text_ar": "كانت ثمرة لقاء بين حضارات، لا مجرد حدود على خريطة.",
+      "old_audio_path": "res://audio/dialogue/narrator/hellenistic_narration_004.ogg",
+      "old_line_id": "hellenistic_narration_004",
+      "recording_path_if_restored": "res://audio/final_voice/narrator/narrator_024.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 56,
+      "old_filename": "ambient_village_harbor_001.ogg",
+      "speaker_id": "ambient_village_harbor",
+      "text_ar": "وصل الزيت من الجزيرة مع سفينة الصباح.",
+      "old_audio_path": "res://audio/ambient/ambient_village_harbor_001.ogg",
+      "old_line_id": "ambient_village_harbor_001",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_001.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 57,
+      "old_filename": "ambient_village_harbor_002.ogg",
+      "speaker_id": "ambient_village_harbor",
+      "text_ar": "المرفأ نشيط اليوم.",
+      "old_audio_path": "res://audio/ambient/ambient_village_harbor_002.ogg",
+      "old_line_id": "ambient_village_harbor_002",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_002.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 58,
+      "old_filename": "ambient_village_market_001.ogg",
+      "speaker_id": "ambient_village_market",
+      "text_ar": "زيتٌ وفخار من الجزر!",
+      "old_audio_path": "res://audio/ambient/ambient_village_market_001.ogg",
+      "old_line_id": "ambient_village_market_001",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_003.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 59,
+      "old_filename": "ambient_village_market_002.ogg",
+      "speaker_id": "ambient_village_market",
+      "text_ar": "أما القافلة البرية فتأخرت عند الممر الجبلي.",
+      "old_audio_path": "res://audio/ambient/ambient_village_market_002.ogg",
+      "old_line_id": "ambient_village_market_002",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_004.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 60,
+      "old_filename": "ambient_village_square_001.ogg",
+      "speaker_id": "ambient_village_square",
+      "text_ar": "البحر يقرّب جزيرة، والجبل يبعد مدينة.",
+      "old_audio_path": "res://audio/ambient/ambient_village_square_001.ogg",
+      "old_line_id": "ambient_village_square_001",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_005.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 61,
+      "old_filename": "ambient_village_square_002.ogg",
+      "speaker_id": "ambient_village_square",
+      "text_ar": "سأعود قبل غروب الشمس.",
+      "old_audio_path": "res://audio/ambient/ambient_village_square_002.ogg",
+      "old_line_id": "ambient_village_square_002",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_006.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 62,
+      "old_filename": "ambient_village_upper_path_001.ogg",
+      "speaker_id": "ambient_village_upper_path",
+      "text_ar": "الطريق إلى المعبد صاعد، لكنه واضح.",
+      "old_audio_path": "res://audio/ambient/ambient_village_upper_path_001.ogg",
+      "old_line_id": "ambient_village_upper_path_001",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_007.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 63,
+      "old_filename": "ambient_athens_debater_west_001.ogg",
+      "speaker_id": "ambient_athens_debater_west",
+      "text_ar": "فلنسمع أصحاب القوارب قبل أن نقرر.",
+      "old_audio_path": "res://audio/ambient/ambient_athens_debater_west_001.ogg",
+      "old_line_id": "ambient_athens_debater_west_001",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_008.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 64,
+      "old_filename": "ambient_athens_debater_east_001.ogg",
+      "speaker_id": "ambient_athens_debater_east",
+      "text_ar": "سيُعرض الأمر في الساحة.",
+      "old_audio_path": "res://audio/ambient/ambient_athens_debater_east_001.ogg",
+      "old_line_id": "ambient_athens_debater_east_001",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_009.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 65,
+      "old_filename": "ambient_athens_civic_001.ogg",
+      "speaker_id": "ambient_athens_civic",
+      "text_ar": "اجتماع المواطنين سيبدأ قريبًا.",
+      "old_audio_path": "res://audio/ambient/ambient_athens_civic_001.ogg",
+      "old_line_id": "ambient_athens_civic_001",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_010.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 66,
+      "old_filename": "ambient_sparta_trainee_west_001.ogg",
+      "speaker_id": "ambient_sparta_trainee_west",
+      "text_ar": "القوة في الانضباط.",
+      "old_audio_path": "res://audio/ambient/ambient_sparta_trainee_west_001.ogg",
+      "old_line_id": "ambient_sparta_trainee_west_001",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_011.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 67,
+      "old_filename": "ambient_sparta_trainee_center_001.ogg",
+      "speaker_id": "ambient_sparta_trainee_center",
+      "text_ar": "حافظوا على الإيقاع!",
+      "old_audio_path": "res://audio/ambient/ambient_sparta_trainee_center_001.ogg",
+      "old_line_id": "ambient_sparta_trainee_center_001",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_012.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 68,
+      "old_filename": "ambient_sparta_trainer_call_001.ogg",
+      "speaker_id": "ambient_sparta_trainer_call",
+      "text_ar": "الصف الأول، تقدّم!",
+      "old_audio_path": "res://audio/ambient/ambient_sparta_trainer_call_001.ogg",
+      "old_line_id": "ambient_sparta_trainer_call_001",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_013.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 69,
+      "old_filename": "ambient_macedon_patrol_west_001.ogg",
+      "speaker_id": "ambient_macedon_patrol_west",
+      "text_ar": "استعدوا لعبور البحر.",
+      "old_audio_path": "res://audio/ambient/ambient_macedon_patrol_west_001.ogg",
+      "old_line_id": "ambient_macedon_patrol_west_001",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_014.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 70,
+      "old_filename": "ambient_macedon_patrol_east_001.ogg",
+      "speaker_id": "ambient_macedon_patrol_east",
+      "text_ar": "الأوامر عند خريطة الحملة.",
+      "old_audio_path": "res://audio/ambient/ambient_macedon_patrol_east_001.ogg",
+      "old_line_id": "ambient_macedon_patrol_east_001",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_015.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    },
+    {
+      "source_index": 71,
+      "old_filename": "ambient_macedon_supply_001.ogg",
+      "speaker_id": "ambient_macedon_supply",
+      "text_ar": "المؤن جاهزة للحملة.",
+      "old_audio_path": "res://audio/ambient/ambient_macedon_supply_001.ogg",
+      "old_line_id": "ambient_macedon_supply_001",
+      "recording_path_if_restored": "res://audio/final_voice/ambient/ambient_016.mp3",
+      "policy_now": "Do not load; archive outside project; speech disabled."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c3kcasibfdajw"
+
+[deps]
+
+files=["res://audio/VOICE_SCRIPT.speaker.translation", "res://audio/VOICE_SCRIPT.text.translation", "res://audio/VOICE_SCRIPT.audio.translation", "res://audio/VOICE_SCRIPT.delivery.translation", "res://audio/VOICE_SCRIPT.scene.translation"]
+
+source_file="res://audio/VOICE_SCRIPT.csv"
+dest_files=["res://audio/VOICE_SCRIPT.speaker.translation", "res://audio/VOICE_SCRIPT.text.translation", "res://audio/VOICE_SCRIPT.audio.translation", "res://audio/VOICE_SCRIPT.delivery.translation", "res://audio/VOICE_SCRIPT.scene.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

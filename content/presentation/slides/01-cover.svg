@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111c33"/><stop offset="1" stop-color="#080f1f"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#a044ff"/><stop offset="1" stop-color="#4d7cff"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="28"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="240" cy="710" r="220" fill="#5336ff" opacity=".18" filter="url(#glow)"/>
+  <circle cx="1330" cy="160" r="170" fill="#315eff" opacity=".14" filter="url(#glow)"/>
+  <rect x="112" y="118" width="8" height="108" rx="4" fill="url(#accent)"/>
+  <text x="1450" y="245" text-anchor="end" direction="rtl" fill="#aeb9ce" font-size="33" font-family="Tahoma, Arial">العرض التقديمي</text>
+  <text x="1450" y="360" text-anchor="end" direction="rtl" fill="#ffffff" font-size="104" font-weight="700" font-family="Tahoma, Arial">اليونان القديمة</text>
+  <text x="1450" y="445" text-anchor="end" direction="rtl" fill="#b7c3d9" font-size="36" font-family="Tahoma, Arial">مساحة جاهزة لشرائح الدرس</text>
+  <g transform="translate(160 530)">
+    <path d="M0 120h410M25 98h360M62 98V5M142 98V5M222 98V5M302 98V5M382 98V5M32 5h343L332-38H75z" fill="none" stroke="#d6b16d" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+  </g>
+  <rect x="1120" y="584" width="330" height="74" rx="22" fill="url(#accent)"/>
+  <text x="1285" y="634" text-anchor="middle" direction="rtl" fill="#091020" font-size="28" font-weight="700" font-family="Tahoma, Arial">أضف عرضك لاحقًا</text>
+</svg>

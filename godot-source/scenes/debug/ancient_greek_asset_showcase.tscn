@@ -1,0 +1,259 @@
+[gd_scene load_steps=34 format=3]
+
+[ext_resource type="Script" path="res://scripts/debug/showcase_camera.gd" id="1_camera"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/architecture/GreekTemple.glb" id="2_temple"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/architecture/GreekHouse_A.glb" id="3_house_a"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/architecture/GreekHouse_B.glb" id="4_house_b"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/architecture/GreekWorkshop.glb" id="5_workshop"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/architecture/MarketStall.glb" id="6_market"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/environment/StoneRoad_Straight.glb" id="7_road_straight"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/environment/StoneRoad_Corner.glb" id="8_road_corner"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/environment/StonePlaza.glb" id="9_plaza"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/environment/DirtPath_Straight.glb" id="10_dirt_straight"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/environment/DirtPath_Curve.glb" id="11_dirt_curve"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/environment/StoneStairs.glb" id="12_stairs"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/environment/StonePlatform.glb" id="13_platform"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/environment/StoneWall_Straight.glb" id="14_wall_straight"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/environment/StoneWall_Corner.glb" id="15_wall_corner"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/environment/StoneWall_End.glb" id="16_wall_end"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/environment/LowStoneWall.glb" id="17_low_wall"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/props/Amphora_A.glb" id="18_amphora_a"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/props/Amphora_B.glb" id="19_amphora_b"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/props/Amphora_C.glb" id="20_amphora_c"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/props/ClayJar.glb" id="21_jar"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/props/Basket.glb" id="22_basket"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/props/WoodTable.glb" id="23_table"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/props/WoodBench.glb" id="24_wood_bench"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/props/WoodCrate.glb" id="25_crate"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/props/StoneBench.glb" id="26_stone_bench"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/characters/PlayerMessenger.glb" id="27_player"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/characters/Teacher.glb" id="28_teacher"]
+[ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/characters/TempleRecipient.glb" id="29_recipient"]
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMaterial"]
+sky_top_color = Color(0.09, 0.36, 0.72, 1)
+sky_horizon_color = Color(0.72, 0.84, 0.94, 1)
+ground_bottom_color = Color(0.20, 0.14, 0.08, 1)
+ground_horizon_color = Color(0.70, 0.64, 0.50, 1)
+sun_angle_max = 24.0
+
+[sub_resource type="Sky" id="Sky"]
+sky_material = SubResource("SkyMaterial")
+
+[sub_resource type="Environment" id="Environment"]
+background_mode = 2
+sky = SubResource("Sky")
+ambient_light_source = 3
+ambient_light_color = Color(0.68, 0.74, 0.82, 1)
+ambient_light_energy = 0.62
+reflected_light_source = 2
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="GroundMaterial"]
+albedo_color = Color(0.51, 0.40, 0.25, 1)
+roughness = 0.96
+
+[sub_resource type="BoxMesh" id="GroundMesh"]
+material = SubResource("GroundMaterial")
+size = Vector3(64, 0.08, 74)
+
+[node name="AncientGreekAssetShowcase" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment")
+
+[node name="MediterraneanSun" type="DirectionalLight3D" parent="."]
+rotation = Vector3(-0.82, -0.62, -0.12)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 1.35
+shadow_enabled = true
+directional_shadow_max_distance = 90.0
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+position = Vector3(0, -0.04, -4)
+mesh = SubResource("GroundMesh")
+
+[node name="InspectionCamera" type="Camera3D" parent="."]
+position = Vector3(0, 8.5, 33)
+rotation = Vector3(-0.20, 0, 0)
+current = true
+fov = 66.0
+script = ExtResource("1_camera")
+
+[node name="Architecture" type="Node3D" parent="."]
+
+[node name="GreekTemple" parent="Architecture" instance=ExtResource("2_temple")]
+position = Vector3(0, 0, -24)
+
+[node name="TempleLabel" type="Label3D" parent="Architecture"]
+position = Vector3(0, 7.5, -14.4)
+billboard = 1
+text = "GREEK TEMPLE"
+font_size = 44
+outline_size = 8
+
+[node name="GreekHouseA" parent="Architecture" instance=ExtResource("3_house_a")]
+position = Vector3(-22, 0, -5)
+
+[node name="HouseALabel" type="Label3D" parent="Architecture"]
+position = Vector3(-22, 4.7, -5)
+billboard = 1
+text = "HOUSE A"
+font_size = 36
+outline_size = 7
+
+[node name="GreekHouseB" parent="Architecture" instance=ExtResource("4_house_b")]
+position = Vector3(-11, 0, -5)
+
+[node name="HouseBLabel" type="Label3D" parent="Architecture"]
+position = Vector3(-11, 4.7, -5)
+billboard = 1
+text = "HOUSE B + COURTYARD"
+font_size = 36
+outline_size = 7
+
+[node name="GreekWorkshop" parent="Architecture" instance=ExtResource("5_workshop")]
+position = Vector3(3, 0, -5)
+
+[node name="WorkshopLabel" type="Label3D" parent="Architecture"]
+position = Vector3(3, 4.2, -5)
+billboard = 1
+text = "AGORA WORKSHOP"
+font_size = 36
+outline_size = 7
+
+[node name="MarketStall" parent="Architecture" instance=ExtResource("6_market")]
+position = Vector3(14, 0, -5)
+
+[node name="MarketLabel" type="Label3D" parent="Architecture"]
+position = Vector3(14, 3.8, -5)
+billboard = 1
+text = "MARKET STALL"
+font_size = 36
+outline_size = 7
+
+[node name="EnvironmentKit" type="Node3D" parent="."]
+
+[node name="EnvironmentLabel" type="Label3D" parent="EnvironmentKit"]
+position = Vector3(-25, 3.0, 4)
+billboard = 1
+text = "ROADS / GROUND KIT"
+font_size = 38
+outline_size = 7
+
+[node name="StoneRoadStraight" parent="EnvironmentKit" instance=ExtResource("7_road_straight")]
+position = Vector3(-24, 0, 8)
+
+[node name="StoneRoadCorner" parent="EnvironmentKit" instance=ExtResource("8_road_corner")]
+position = Vector3(-18, 0, 8)
+
+[node name="StonePlaza" parent="EnvironmentKit" instance=ExtResource("9_plaza")]
+position = Vector3(-11, 0, 8)
+
+[node name="DirtPathStraight" parent="EnvironmentKit" instance=ExtResource("10_dirt_straight")]
+position = Vector3(-4, 0, 8)
+
+[node name="DirtPathCurve" parent="EnvironmentKit" instance=ExtResource("11_dirt_curve")]
+position = Vector3(2, 0, 8)
+
+[node name="StoneStairs" parent="EnvironmentKit" instance=ExtResource("12_stairs")]
+position = Vector3(9, 0, 7)
+
+[node name="StonePlatform" parent="EnvironmentKit" instance=ExtResource("13_platform")]
+position = Vector3(17, 0, 8)
+
+[node name="WallsLabel" type="Label3D" parent="EnvironmentKit"]
+position = Vector3(-24, 3.0, 13)
+billboard = 1
+text = "WALL KIT"
+font_size = 38
+outline_size = 7
+
+[node name="StoneWallStraight" parent="EnvironmentKit" instance=ExtResource("14_wall_straight")]
+position = Vector3(-18, 0, 15)
+
+[node name="StoneWallCorner" parent="EnvironmentKit" instance=ExtResource("15_wall_corner")]
+position = Vector3(-9, 0, 15)
+
+[node name="StoneWallEnd" parent="EnvironmentKit" instance=ExtResource("16_wall_end")]
+position = Vector3(0, 0, 15)
+
+[node name="LowStoneWall" parent="EnvironmentKit" instance=ExtResource("17_low_wall")]
+position = Vector3(8, 0, 15)
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="PropsLabel" type="Label3D" parent="Props"]
+position = Vector3(-24, 3.0, 20)
+billboard = 1
+text = "PROPS"
+font_size = 38
+outline_size = 7
+
+[node name="AmphoraA" parent="Props" instance=ExtResource("18_amphora_a")]
+position = Vector3(-19, 0, 21)
+
+[node name="AmphoraB" parent="Props" instance=ExtResource("19_amphora_b")]
+position = Vector3(-17.5, 0, 21)
+
+[node name="AmphoraC" parent="Props" instance=ExtResource("20_amphora_c")]
+position = Vector3(-16, 0, 21)
+
+[node name="ClayJar" parent="Props" instance=ExtResource("21_jar")]
+position = Vector3(-14.5, 0, 21)
+
+[node name="Basket" parent="Props" instance=ExtResource("22_basket")]
+position = Vector3(-12.5, 0, 21)
+
+[node name="WoodTable" parent="Props" instance=ExtResource("23_table")]
+position = Vector3(-8.5, 0, 21)
+
+[node name="WoodBench" parent="Props" instance=ExtResource("24_wood_bench")]
+position = Vector3(-4.5, 0, 21)
+
+[node name="WoodCrate" parent="Props" instance=ExtResource("25_crate")]
+position = Vector3(-1.5, 0, 21)
+
+[node name="StoneBench" parent="Props" instance=ExtResource("26_stone_bench")]
+position = Vector3(2, 0, 21)
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="CharactersLabel" type="Label3D" parent="Characters"]
+position = Vector3(10, 3.5, 20)
+billboard = 1
+text = "CHARACTERS"
+font_size = 38
+outline_size = 7
+
+[node name="PlayerMessenger" parent="Characters" instance=ExtResource("27_player")]
+position = Vector3(7, 0, 22)
+
+[node name="Teacher" parent="Characters" instance=ExtResource("28_teacher")]
+position = Vector3(10, 0, 22)
+
+[node name="TempleRecipient" parent="Characters" instance=ExtResource("29_recipient")]
+position = Vector3(13, 0, 22)
+
+[node name="Instructions" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="ColorRect" parent="Instructions"]
+offset_left = 36.0
+offset_top = 18.0
+offset_right = 560.0
+offset_bottom = 88.0
+color = Color(0.04, 0.035, 0.025, 0.78)
+
+[node name="Label" type="Label" parent="Instructions/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 8.0
+offset_right = -14.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ANCIENT GREEK ASSET SHOWCASE\nWASD move · Mouse look · Q/E down/up · Shift faster · Esc release mouse"
+vertical_alignment = 1

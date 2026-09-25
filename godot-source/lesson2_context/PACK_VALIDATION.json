@@ -1,0 +1,40 @@
+{
+  "source_pages": 6,
+  "source_printed_pages": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "fact_records": 40,
+  "new_required_dialogue_entries": 52,
+  "new_optional_ambient_entries": 6,
+  "draft_total_entries": 58,
+  "legacy_nonplayer_mappings": 65,
+  "legacy_silent_player_entries": 6,
+  "facts_in_study_record_or_plan_not_directly_in_dialogue": [
+    "CUL01",
+    "ECO01",
+    "PHI03",
+    "REV01",
+    "REV02",
+    "REV03"
+  ],
+  "checks": [
+    "All new line IDs unique and l2-prefixed",
+    "Every source fact ID resolves",
+    "All new audio paths empty",
+    "Legacy mapping has 65 distinct recording paths",
+    "Original PDF excerpt contains exactly printed pages 12-17"
+  ],
+  "not_tested": [
+    "User local Godot game",
+    "Current local audio folders",
+    "Actual voice recordings",
+    "Game playtime",
+    "Visual/gameplay implementation"
+  ],
+  "pdf_extraction_validation": "All 6 extracted page renders exactly match the corresponding original pages in PyMuPDF at 72 dpi."
+}
