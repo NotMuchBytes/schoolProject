@@ -1,0 +1,32 @@
+Make the main GitHub Pages portfolio site use the custom domain:
+https://notmuchbytes.is-a.dev
+
+Also make the school project available at:
+https://notmuchbytes.is-a.dev/schoolproject
+
+Requirements:
+- The main portfolio repo is the GitHub Pages site repo: NotMuchBytes.github.io
+- Set the custom domain to: notmuchbytes.is-a.dev
+- Make sure the root site is served from the custom domain
+- Create a folder named schoolproject in the repo root
+- Add an index.html inside that folder
+- That page should either serve the project directly or redirect to the project’s GitHub Pages URL
+- The project should be accessible through the path:
+  https://notmuchbytes.is-a.dev/schoolproject
+- Add the project to the main portfolio’s Projects tab or project section
+- Use a clean project card with a title like “Ancient Greece School Project” or “School Projects”
+- Link the card to:
+  https://notmuchbytes.is-a.dev/schoolproject
+- Keep the layout consistent with the rest of the site
+- Do not break the main homepage or portfolio styling
+- Verify the repo files and the project link structure are correct
+
+Important:
+- This is a path-based setup, not a subdomain.
+- Do not use schoolproject.notmuchbytes.is-a.dev unless specifically requested.
+- Use the URL format:
+  https://notmuchbytes.is-a.dev/schoolproject
+
+You can also add a redirect from the /schoolproject page to the project GitHub Pages URL if needed.
+
+If the current repo structure is different, adapt the changes to fit the existing portfolio codebase without breaking anything.
