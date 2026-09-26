@@ -91,8 +91,12 @@ func _optimize_node(node: Node) -> void:
 			(node as Label3D).font = _arabic_font
 	if not _web_enabled:
 		return
-	if node is Light3D:
-		# Dynamic shadow maps are the largest GPU cost in these dense city scenes.
+	if node is DirectionalLight3D:
+		var sun := node as DirectionalLight3D
+		sun.shadow_enabled = true
+		sun.light_energy = minf(sun.light_energy, 0.90)
+		sun.shadow_opacity = minf(sun.shadow_opacity, 0.72)
+	elif node is Light3D:
 		(node as Light3D).shadow_enabled = false
 	elif node is WorldEnvironment:
 		_optimize_environment((node as WorldEnvironment).environment)
@@ -100,28 +104,6 @@ func _optimize_node(node: Node) -> void:
 		(node as GPUParticles3D).emitting = false
 	elif node is Camera3D:
 		(node as Camera3D).far = minf((node as Camera3D).far, WEB_CAMERA_FAR)
-	elif node is GeometryInstance3D:
-		_optimize_geometry(node as GeometryInstance3D)
-
-
-func _optimize_geometry(geometry: GeometryInstance3D) -> void:
-	geometry.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	geometry.lod_bias = minf(geometry.lod_bias, 0.75)
-	if geometry.visibility_range_end > 0.0 or not geometry is MeshInstance3D:
-		return
-	var mesh_instance := geometry as MeshInstance3D
-	if mesh_instance.mesh == null:
-		return
-	var extent := mesh_instance.mesh.get_aabb().size * mesh_instance.scale.abs()
-	var longest_side := maxf(extent.x, maxf(extent.y, extent.z))
-	# Small props dominate draw-call count in the procedural cities. Culling them
-	# earlier keeps nearby lesson landmarks intact while making WebGL much lighter.
-	if longest_side <= 2.5:
-		geometry.visibility_range_end = 48.0
-	elif longest_side <= 10.0:
-		geometry.visibility_range_end = 90.0
-	elif longest_side <= 24.0:
-		geometry.visibility_range_end = 125.0
 
 
 func _optimize_environment(environment: Environment) -> void:
@@ -132,3 +114,8 @@ func _optimize_environment(environment: Environment) -> void:
 	environment.sdfgi_enabled = false
 	environment.glow_enabled = false
 	environment.volumetric_fog_enabled = false
+	environment.background_energy_multiplier = minf(environment.background_energy_multiplier, 0.72)
+	environment.ambient_light_energy = minf(environment.ambient_light_energy, 0.36)
+	environment.tonemap_exposure = minf(environment.tonemap_exposure, 0.94)
+	if environment.adjustment_enabled:
+		environment.adjustment_brightness = minf(environment.adjustment_brightness, 0.96)

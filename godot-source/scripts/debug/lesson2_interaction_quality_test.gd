@@ -50,8 +50,10 @@ func _run() -> void:
 	_check(primary_spots.size() == 1, "exactly one current interactable receives guidance")
 	if primary_spots.size() == 1:
 		_check(primary_spots[0].marker.visible and primary_spots[0].marker.text == "!", "current interactable uses the same exclamation marker as NPCs")
-	var journey_panel := _level.get_node_or_null("GameHUD/JourneyProgressPanel") as Control
-	_check(journey_panel != null and journey_panel.visible and journey_panel.modulate.a > 0.5, "HUD visibly shows location and chapter progress without opening a menu")
+	var journey_label := _level.get_node_or_null(
+		"GameHUD/ObjectivePanel/Margin/VBox/StoryProgress"
+	) as Label
+	_check(journey_label != null and journey_label.visible and not journey_label.text.is_empty(), "HUD visibly shows location and chapter progress without opening a menu")
 	var source_visual := environment.call("get_mission_prop_anchor", "industry_wood") as Node3D
 	_check(source_visual != null and not source_visual.visible, "portable source disappears physically instead of duplicating into inventory")
 	var held_visual := _held.get_held_visual()

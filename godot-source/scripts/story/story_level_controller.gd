@@ -64,6 +64,13 @@ func set_objective(mission_title: String, objective_text: String) -> void:
 	Objectives.set_objective(mission_title, objective_text)
 
 
+func set_story_progress(
+	location_ar: String, step_label: String, completed: int, total: int
+) -> void:
+	if hud != null:
+		hud.set_journey_progress(location_ar, step_label, completed, total)
+
+
 func set_npc_available(npc: Node, enabled: bool, show_marker: bool = false) -> void:
 	if npc == null:
 		return
@@ -71,7 +78,21 @@ func set_npc_available(npc: Node, enabled: bool, show_marker: bool = false) -> v
 		npc.call("set_interaction_enabled", enabled)
 	if npc.has_method("set_quest_marker"):
 		npc.call("set_quest_marker", show_marker and enabled)
+		# Label3D visibility toggled during the first Web frame can be culled until
+		# another state change. Reassert only the active story target after one
+		# rendered frame; inactive and ambient characters remain scene-authored off.
+		if show_marker and enabled:
+			_reassert_quest_marker(npc)
 	_refresh_interaction_prompt()
+
+
+func _reassert_quest_marker(npc: Node) -> void:
+	await get_tree().process_frame
+	if not is_instance_valid(npc) or not npc.has_method("set_quest_marker"):
+		return
+	if npc.has_method("is_interaction_enabled") and not bool(npc.call("is_interaction_enabled")):
+		return
+	npc.call("set_quest_marker", true)
 
 
 func on_npc_interaction_requested(_npc: Node) -> void:

@@ -1,19 +1,11 @@
-# Presentation content
+# Question content and PowerPoint
 
-The browser does not render `.pptx` files reliably. Export the PowerPoint slides as PNG or JPG images instead.
+Edit `questions.json` to update the question review shown on the website. The same data builds the downloadable PowerPoint, so both versions stay in sync.
 
-1. In PowerPoint, choose **File → Export → Change File Type → PNG** (or JPG), then export every slide.
-2. Copy the generated images into `content/presentation/slides/`.
-3. Edit `content/presentation/manifest.json` so each slide appears in order:
+From the repository root, run:
 
-```json
-{
-  "title": "Lesson title",
-  "slides": [
-    { "src": "slides/slide-01.png", "alt": "Description of slide 1" },
-    { "src": "slides/slide-02.png", "alt": "Description of slide 2" }
-  ]
-}
+```powershell
+python tools/build_questions_pptx.py
 ```
 
-The viewer automatically provides previous/next controls, slide numbering, keyboard navigation, responsive scaling, and fullscreen mode.
+The generated deck is `ancient-greece-questions.pptx`.

@@ -5,9 +5,10 @@ import os from "node:os";
 import path from "node:path";
 
 const EDGE = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe";
-const URL = process.env.GAME_URL || "http://127.0.0.1:8000/games/ancient-greece/index.html";
+const URL = process.env.GAME_URL || "http://127.0.0.1:8000/games/ancient-greece/ancient-greece-rebuilt.html";
 const SCREENSHOT = process.env.GAME_SCREENSHOT;
 const START_GAME = process.env.GAME_START === "1";
+const SKIP_CUTSCENE = process.env.GAME_SKIP_CUTSCENE === "1";
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function freePort() {
@@ -91,6 +92,11 @@ try {
     await send("Input.dispatchKeyEvent", { type: "keyDown", key: "Enter", code: "Enter", windowsVirtualKeyCode: 13 });
     await send("Input.dispatchKeyEvent", { type: "keyUp", key: "Enter", code: "Enter", windowsVirtualKeyCode: 13 });
     await delay(12000);
+    if (SKIP_CUTSCENE) {
+      await send("Input.dispatchKeyEvent", { type: "keyDown", key: "Escape", code: "Escape", windowsVirtualKeyCode: 27 });
+      await send("Input.dispatchKeyEvent", { type: "keyUp", key: "Escape", code: "Escape", windowsVirtualKeyCode: 27 });
+      await delay(3000);
+    }
   }
   const state = await evaluate(`({
     title: document.title,

@@ -36,6 +36,7 @@ signal receive_reaction_finished(npc: Node, reaction_kind: String)
 
 @onready var interaction_area: Area3D = $InteractionArea
 @onready var quest_marker: Label3D = $QuestMarker
+@onready var quest_beacon: Node3D = $QuestBeacon
 @onready var marker_base: MeshInstance3D = $MarkerBase
 @onready var visual: Node3D = $Visual
 
@@ -79,8 +80,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_marker_time += delta
 	_idle_time += delta
-	if quest_marker.visible:
-		quest_marker.position.y = 2.72 + sin(_marker_time * 2.4) * 0.1
+	if quest_marker_active:
+		quest_beacon.position.y = 3.08 + sin(_marker_time * 2.4) * 0.1
 
 	if _receive_reaction_active:
 		_receive_reaction_elapsed += delta
@@ -146,10 +147,12 @@ func interact() -> void:
 
 func set_quest_marker(active: bool) -> void:
 	quest_marker_active = active
-	quest_marker.visible = active
+	quest_marker.visible = false
+	quest_beacon.visible = true
+	quest_beacon.scale = Vector3.ONE if active else Vector3.ZERO
 	marker_base.visible = active
 	_marker_time = 0.0
-	quest_marker.position.y = 2.72
+	quest_beacon.position.y = 3.08
 
 
 func set_interaction_enabled(enabled: bool) -> void:

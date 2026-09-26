@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://scripts/characters/npc_controller.gd" id="1_npc"]
 [ext_resource type="Script" path="res://scripts/characters/generated_character_visual.gd" id="2_visual"]
 [ext_resource type="PackedScene" path="res://assets/generated/ancient_greek/characters/Teacher.glb" id="3_character"]
+[ext_resource type="PackedScene" path="res://scenes/ui/quest_beacon.tscn" id="4_quest_beacon"]
 
 [sub_resource type="CapsuleShape3D" id="NpcShape"]
 radius = 0.42
@@ -46,16 +47,19 @@ position = Vector3(0, 0.04, 0)
 mesh = SubResource("MarkerBaseMesh")
 
 [node name="QuestMarker" type="Label3D" parent="."]
+visible = false
 position = Vector3(0, 2.72, 0)
 billboard = 1
 text = "!"
-font_size = 52
-outline_size = 9
+font_size = 38
+outline_size = 7
 modulate = Color(1, 0.76, 0.18, 0.96)
 outline_modulate = Color(0.08, 0.055, 0.02, 0.95)
 no_depth_test = true
 fixed_size = true
-visibility_range_end = 30.0
+visibility_range_end = 22.0
+
+[node name="QuestBeacon" parent="." instance=ExtResource("4_quest_beacon")]
 
 [node name="InteractionArea" type="Area3D" parent="."]
 collision_layer = 0

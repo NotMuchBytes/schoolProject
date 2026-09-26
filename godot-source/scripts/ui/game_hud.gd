@@ -13,6 +13,8 @@ signal dialogue_finished
 @onready var continue_indicator: Label = $DialoguePanel/Margin/VBox/Footer/ContinueAction/ContinueIndicator
 @onready var mission_name_label: Label = $ObjectivePanel/Margin/VBox/MissionName
 @onready var objective_label: Label = $ObjectivePanel/Margin/VBox/Objective
+@onready var story_progress_label: Label = $ObjectivePanel/Margin/VBox/StoryProgress
+@onready var story_progress_bar: ProgressBar = $ObjectivePanel/Margin/VBox/StoryProgressBar
 @onready var completion_panel: PanelContainer = $CompletionPanel
 @onready var completion_label: Label = $CompletionPanel/Margin/Message
 @onready var cutscene_hint: Label = $CutsceneHint
@@ -37,7 +39,12 @@ var _completion_base_y: float = 42.0
 
 
 func _ready() -> void:
-	_build_journey_panel()
+	story_progress_bar.add_theme_stylebox_override(
+		"background", _make_hud_style(Color(0.11, 0.12, 0.13, 0.9), Color.TRANSPARENT, 3)
+	)
+	story_progress_bar.add_theme_stylebox_override(
+		"fill", _make_hud_style(Color(0.86, 0.64, 0.27, 1.0), Color.TRANSPARENT, 3)
+	)
 	_completion_base_y = completion_panel.position.y
 	show_interaction_prompt(false)
 	dialogue_panel.hide()
@@ -125,44 +132,20 @@ func set_journey_progress(
 ) -> void:
 	var safe_total := maxi(total, 1)
 	var safe_completed := clampi(completed, 0, safe_total)
-	_journey_location.text = location_ar if not location_ar.is_empty() else "المدينة"
-	_journey_step.text = step_label if not step_label.is_empty() else "تابع الهدف الحالي"
-	_journey_bar.max_value = float(safe_total)
-	_journey_count.text = "%s / %s" % [
-		_to_arabic_digits(safe_completed), _to_arabic_digits(safe_total)
+	var location := location_ar if not location_ar.is_empty() else "المدينة"
+	story_progress_label.text = "%s  ·  %s / %s" % [
+		location, _to_arabic_digits(safe_completed), _to_arabic_digits(safe_total)
 	]
-	_rebuild_journey_dots(safe_completed, safe_total)
-	if _journey_tween != null and _journey_tween.is_valid():
-		_journey_tween.kill()
-	var was_visible := _journey_panel.visible
-	_journey_panel.show()
-	_journey_tween = create_tween().set_parallel(true)
-	_journey_tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
-	_journey_tween.tween_property(_journey_bar, "value", float(safe_completed), 0.28)
-	if not was_visible:
-		_journey_panel.modulate = Color(1.0, 1.0, 1.0, 0.0)
-		_journey_panel.position.x = 10.0
-	# A mission may update several targets in the same frame. Always complete the
-	# fade after replacing a tween so an interrupted first reveal cannot leave
-	# the otherwise-visible panel permanently transparent.
-	_journey_tween.tween_property(_journey_panel, "modulate:a", 1.0, 0.20)
-	_journey_tween.tween_property(_journey_panel, "position:x", 22.0, 0.20)
+	story_progress_label.tooltip_text = step_label
+	story_progress_bar.max_value = float(safe_total)
+	story_progress_bar.value = float(safe_completed)
+	story_progress_label.show()
+	story_progress_bar.show()
 
 
 func clear_journey_progress() -> void:
-	if _journey_panel == null or not _journey_panel.visible:
-		return
-	if _journey_tween != null and _journey_tween.is_valid():
-		_journey_tween.kill()
-	_journey_tween = create_tween().set_parallel(true)
-	_journey_tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
-	_journey_tween.tween_property(_journey_panel, "modulate:a", 0.0, 0.15)
-	_journey_tween.tween_property(_journey_panel, "position:x", 10.0, 0.15)
-	_journey_tween.chain().tween_callback(func():
-		_journey_panel.hide()
-		_journey_panel.modulate = Color.WHITE
-		_journey_panel.position.x = 22.0
-	)
+	story_progress_label.hide()
+	story_progress_bar.hide()
 
 
 ## Type-aware feedback retains the existing completion banner API while adding
@@ -296,14 +279,20 @@ func _start_continue_animation() -> void:
 func _build_journey_panel() -> void:
 	_journey_panel = PanelContainer.new()
 	_journey_panel.name = "JourneyProgressPanel"
-	_journey_panel.position = Vector2(22.0, 22.0)
-	_journey_panel.size = Vector2(306.0, 122.0)
+	# The project-wide Arabic locale mirrors auto-layout controls. Keep this
+	# outer shell explicitly LTR and pin it to the physical top-left; the text
+	# containers inside remain RTL. This prevents it from landing underneath the
+	# objective panel on the physical top-right in Web exports.
+	_journey_panel.layout_direction = Control.LAYOUT_DIRECTION_LTR
 	_journey_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_journey_panel.add_theme_stylebox_override(
 		"panel",
 		_make_hud_style(Color(0.025, 0.04, 0.06, 0.92), Color(0.68, 0.53, 0.26, 0.9), 8)
 	)
 	add_child(_journey_panel)
+	_journey_panel.set_anchors_preset(Control.PRESET_TOP_LEFT)
+	_journey_panel.position = Vector2(22.0, 22.0)
+	_journey_panel.size = Vector2(306.0, 122.0)
 
 	var margin := MarginContainer.new()
 	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE

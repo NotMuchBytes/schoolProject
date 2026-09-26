@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0d1629" />
-    <link rel="icon" type="image/png" href="games/ancient-greece/ancient-greece.icon.png" />
+    <link rel="icon" type="image/png" href="games/ancient-greece/ancient-greece-rebuilt.icon.png" />
     <meta
       name="description"
       content="درس عربي تفاعلي عن اليونان القديمة"
@@ -14,7 +14,7 @@
     <script src="js/app.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#lesson">انتقل إلى محتوى الدرس</a>
+    <a class="skip-link" href="#game">انتقل إلى اللعبة</a>
 
     <header class="site-header" id="home">
       <nav class="nav shell" aria-label="التنقل الرئيسي">
@@ -24,8 +24,8 @@
         </a>
         <div class="nav-links">
           <a class="active" href="#home">الرئيسية</a>
-          <a href="#lesson">الدرس</a>
           <a href="#game">اللعبة</a>
+          <a href="#questions">الأسئلة</a>
         </div>
       </nav>
     </header>
@@ -41,8 +41,8 @@
             درسٍ بصري وتجربة ثلاثية الأبعاد.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#lesson">
-              ادخل الدرس
+            <a class="button button-primary" href="#game">
+              ادخل اللعبة
               <span aria-hidden="true">←</span>
             </a>
             <a class="text-link" href="#game">انتقل إلى اللعبة</a>
@@ -59,47 +59,10 @@
           </div>
         </div>
 
-        <a class="scroll-cue" href="#lesson" aria-label="مرّر إلى الدرس">
+        <a class="scroll-cue" href="#game" aria-label="مرّر إلى اللعبة">
           <span>اكتشف</span>
           <i aria-hidden="true"></i>
         </a>
-      </section>
-
-      <section class="section lesson-section" id="lesson" aria-labelledby="lesson-title">
-        <div class="shell">
-          <div class="section-heading reveal">
-            <p class="eyebrow"><span></span> العرض التقديمي</p>
-            <h2 id="lesson-title">الدرس</h2>
-            <p>تصفّح شرائح الدرس، ثم انتقل إلى النشاط التفاعلي لتطبّق ما تعلّمته.</p>
-          </div>
-
-          <div class="presentation-card reveal" id="presentationViewer">
-            <div class="presentation-topbar">
-              <div>
-                <span class="status-dot" aria-hidden="true"></span>
-                <span>عرض الدرس</span>
-              </div>
-              <button class="icon-button" id="presentationFullscreen" type="button" aria-label="عرض الشرائح بملء الشاشة" title="ملء الشاشة">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
-              </button>
-            </div>
-
-            <div class="slide-stage" aria-live="polite" aria-busy="true">
-              <div class="slide-loader" id="slideLoader"><span></span> جارٍ تجهيز الشرائح…</div>
-              <img id="slideImage" alt="" />
-            </div>
-
-            <div class="presentation-controls">
-              <button class="control-button" id="nextSlide" type="button">
-                <span aria-hidden="true">→</span> التالي
-              </button>
-              <p class="slide-counter" id="slideCounter">— / —</p>
-              <button class="control-button" id="previousSlide" type="button">
-                السابق <span aria-hidden="true">←</span>
-              </button>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section class="section game-section" id="game" aria-labelledby="game-title">
@@ -122,7 +85,7 @@
               <iframe
                 id="gameFrame"
                 title="لعبة اليونان القديمة ثلاثية الأبعاد"
-                data-src="games/ancient-greece/ancient-greece-fast.html"
+                data-src="games/ancient-greece/ancient-greece-rebuilt.html"
                 allow="fullscreen; autoplay"
                 allowfullscreen
                 tabindex="0"
@@ -158,6 +121,53 @@
               <span><kbd>Space</kbd> للقفز</span>
               <span><kbd>E</kbd> للتفاعل</span>
               <span>انقر داخل اللعبة للتحكم</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section questions-section" id="questions" aria-labelledby="questions-title">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow"><span></span> مراجعة تفاعلية</p>
+            <h2 id="questions-title">ماذا تعلّمت؟</h2>
+            <p>استرجع أهم محطات الحضارة اليونانية، ثم شاركنا رأيك في التجربة.</p>
+            <a class="button button-primary questions-download" href="content/presentation/ancient-greece-questions.pptx" download>
+              تنزيل PowerPoint <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <div class="question-viewer reveal" id="questionViewer" aria-busy="true">
+            <div class="question-topbar">
+              <p class="question-topic" id="questionTopic">جارٍ تجهيز الأسئلة…</p>
+              <p class="question-counter" id="questionCounter">— / —</p>
+            </div>
+            <div class="question-progress" role="progressbar" id="questionProgress" aria-label="التقدم في الأسئلة" aria-valuemin="1" aria-valuemax="11" aria-valuenow="1">
+              <span class="question-progress-fill" id="questionProgressFill"></span>
+            </div>
+            <div class="question-content">
+              <p class="question-number" id="questionNumber"></p>
+              <h3 class="question-text" id="questionText"></h3>
+              <div class="answer-panel" id="answerPanel" aria-live="polite" hidden>
+                <span>الإجابة</span>
+                <p id="answerText"></p>
+              </div>
+              <div class="survey-panel" id="surveyPanel" hidden>
+                <p>اختر إجابتك</p>
+                <div class="survey-options" id="surveyOptions" role="group" aria-label="خيارات الإجابة"></div>
+                <p class="survey-response" id="surveyResponse" role="status" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="question-controls">
+              <button class="control-button" id="nextQuestion" type="button" disabled>
+                التالي <span aria-hidden="true">←</span>
+              </button>
+              <button class="control-button answer-toggle" id="answerToggle" type="button" aria-expanded="false" disabled>
+                أظهر الإجابة
+              </button>
+              <button class="control-button" id="previousQuestion" type="button" disabled>
+                <span aria-hidden="true">→</span> السابق
+              </button>
             </div>
           </div>
         </div>

@@ -28,11 +28,13 @@ signal interaction_requested(npc: TestNPC)
 
 @onready var interaction_area: Area3D = $InteractionArea
 @onready var quest_marker: Label3D = $QuestMarker
+@onready var quest_beacon: Node3D = $QuestBeacon
 @onready var marker_base: MeshInstance3D = $MarkerBase
 
 var _interaction_enabled: bool = true
-var _marker_base_y: float = 2.72
+var _marker_base_y: float = 3.08
 var _marker_time: float = 0.0
+var _quest_marker_active: bool = false
 var _base_rotation_y: float = 0.0
 
 
@@ -42,13 +44,14 @@ func _ready() -> void:
 	interaction_area.body_exited.connect(_on_body_exited)
 	quest_marker.hide()
 	marker_base.hide()
+	set_quest_marker(false)
 	set_process(false)
 
 
 func _process(delta: float) -> void:
-	if quest_marker.visible:
+	if _quest_marker_active:
 		_marker_time += delta
-		quest_marker.position.y = _marker_base_y + sin(_marker_time * 2.4) * 0.1
+		quest_beacon.position.y = _marker_base_y + sin(_marker_time * 2.4) * 0.1
 
 
 func interact() -> void:
@@ -57,10 +60,15 @@ func interact() -> void:
 
 
 func set_quest_marker(active: bool) -> void:
-	quest_marker.visible = active
+	# Label3D visibility is unreliable in the WebGL renderer. The lightweight
+	# mesh beacon keeps the same exclamation-mark silhouette on every platform.
+	quest_marker.visible = false
+	_quest_marker_active = active
+	quest_beacon.visible = true
+	quest_beacon.scale = Vector3.ONE if active else Vector3.ZERO
 	marker_base.visible = active
 	_marker_time = 0.0
-	quest_marker.position.y = _marker_base_y
+	quest_beacon.position.y = _marker_base_y
 	set_process(active)
 
 
@@ -68,6 +76,8 @@ func set_interaction_enabled(enabled: bool) -> void:
 	_interaction_enabled = enabled
 	if not enabled:
 		quest_marker.hide()
+		_quest_marker_active = false
+		quest_beacon.scale = Vector3.ZERO
 		marker_base.hide()
 		set_process(false)
 	else:

@@ -101,7 +101,7 @@ anchor_right = 1.0
 offset_left = -306.0
 offset_top = 22.0
 offset_right = -22.0
-offset_bottom = 152.0
+offset_bottom = 178.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("ObjectivePanelStyle")
 
@@ -138,6 +138,20 @@ theme_override_font_sizes/font_size = 16
 text = "تحدث إلى المعلّم"
 text_direction = 2
 horizontal_alignment = 2
+
+[node name="StoryProgress" type="Label" parent="ObjectivePanel/Margin/VBox"]
+layout_direction = 3
+theme_override_colors/font_color = Color(0.82, 0.76, 0.63, 1)
+theme_override_font_sizes/font_size = 13
+text = "القرية  ·  ٠ / ٣"
+text_direction = 2
+horizontal_alignment = 2
+
+[node name="StoryProgressBar" type="ProgressBar" parent="ObjectivePanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 6)
+mouse_filter = 2
+max_value = 3.0
+show_percentage = false
 
 [node name="InteractionPrompt" type="Label" parent="."]
 layout_direction = 3

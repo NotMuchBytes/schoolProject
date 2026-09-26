@@ -89,6 +89,20 @@ func has_flag(flag_name: String) -> bool:
 	return bool(story_flags.get(flag_name, false))
 
 
+## Persists an in-chapter story step, not just the scene boundary. This keeps
+## Continue useful after the player has already spoken to one or more characters.
+func save_story_progress(
+	stage_key: String, stage_value: String, scene_path: String = ""
+) -> void:
+	story_flags[stage_key] = stage_value
+	var resolved_scene_path := scene_path
+	if resolved_scene_path.is_empty() and get_tree().current_scene != null:
+		resolved_scene_path = get_tree().current_scene.scene_file_path
+	if current_chapter == "menu" or resolved_scene_path.is_empty():
+		return
+	save_checkpoint(current_chapter, resolved_scene_path, story_flags)
+
+
 func transition_to_scene(
 	scene_path: String,
 	chapter_id: String,
@@ -115,10 +129,7 @@ func transition_to_scene(
 		return
 	current_chapter = chapter_id
 	if chapter_id != "menu":
-		var checkpoint_extra: Dictionary = {}
-		if chapter_id == "lesson2":
-			checkpoint_extra["lesson2_stage"] = str(story_flags.get("lesson2_stage", "intro"))
-		save_checkpoint(chapter_id, scene_path, checkpoint_extra)
+		save_checkpoint(chapter_id, scene_path, story_flags)
 	chapter_changed.emit(current_chapter)
 	await get_tree().process_frame
 	if not title.is_empty():

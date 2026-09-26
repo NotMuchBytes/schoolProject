@@ -132,13 +132,13 @@ try {
   });
   await send("Page.navigate", { url: SITE });
   await waitFor("document.readyState === 'complete'");
-  await waitFor("document.querySelector('#slideImage')?.classList.contains('loaded')");
+  await waitFor("document.querySelector('#questionViewer')?.getAttribute('aria-busy') === 'false'");
 
   const desktop = await evaluate(`(() => ({
     direction: document.documentElement.dir,
     language: document.documentElement.lang,
-    slideCounter: document.querySelector('#slideCounter')?.textContent.trim(),
-    slideLoaded: document.querySelector('#slideImage')?.naturalWidth > 0,
+    lessonSectionAbsent: !document.querySelector('#lesson'),
+    lessonNavAbsent: !document.querySelector('.nav-links a[href="#lesson"]'),
     gameIsLazy: !document.querySelector('#gameFrame')?.getAttribute('src'),
     noHorizontalOverflow: document.documentElement.scrollWidth <= document.documentElement.clientWidth,
     heroTitle: document.querySelector('#hero-title')?.innerText.replace(/\\n/g, ' '),
@@ -148,16 +148,31 @@ try {
     bodyOverscroll: getComputedStyle(document.body).overscrollBehaviorY,
   }))()`);
 
-  await evaluate("document.querySelector('#nextSlide').click()");
-  await waitFor("document.querySelector('#slideCounter')?.textContent.trim() === '2 / 3'");
-  await waitFor("document.querySelector('#slideImage')?.classList.contains('loaded') && document.querySelector('#slideImage')?.naturalWidth > 0");
-  const controls = await evaluate(`(() => ({
-    afterNext: document.querySelector('#slideCounter')?.textContent.trim(),
-    imageLoaded: document.querySelector('#slideImage')?.naturalWidth > 0,
-    previousEnabled: !document.querySelector('#previousSlide')?.disabled,
-  }))()`);
-
   const fullscreenApi = await evaluate("document.fullscreenEnabled && typeof HTMLElement.prototype.requestFullscreen === 'function'");
+
+  const questions = await evaluate(`(() => {
+    const questionText = document.querySelector('#questionText');
+    document.querySelector('#answerToggle').click();
+    const firstAnswer = document.querySelector('#answerText')?.textContent.trim();
+    const firstAnswerVisible = !document.querySelector('#answerPanel')?.hidden;
+    for (let index = 0; index < 9; index += 1) document.querySelector('#nextQuestion').click();
+    const tenthQuestion = questionText.textContent.trim();
+    const pollOptions = [...document.querySelectorAll('#surveyOptions button')].map((button) => button.textContent.trim());
+    document.querySelector('#surveyOptions button')?.click();
+    const pollResponse = document.querySelector('#surveyResponse')?.textContent.trim();
+    const pollChoicePressed = document.querySelector('#surveyOptions button')?.getAttribute('aria-pressed');
+    return {
+      renderedFirstQuestion: document.querySelector('#questionNumber')?.textContent.trim(),
+      firstAnswerVisible,
+      firstAnswer,
+      tenthQuestion,
+      pollOptions,
+      pollResponse,
+      pollChoicePressed,
+      total: document.querySelector('#questionCounter')?.textContent.trim(),
+      downloadLink: document.querySelector('.questions-download')?.getAttribute('href'),
+    };
+  })()`);
 
   await send("Emulation.setDeviceMetricsOverride", {
     width: 390,
@@ -215,28 +230,33 @@ try {
 
   const fullscreen = await evaluate(`({
     apiAvailable: ${fullscreenApi},
-    presentationControl: Boolean(document.querySelector('#presentationFullscreen')),
     gameControl: Boolean(document.querySelector('#gameFullscreen')),
   })`);
   const expectedHeadlessWarnings = errors.filter((error) => error.includes("Pointer Lock"));
   const unexpectedConsoleErrors = errors.filter((error) => !error.includes("Pointer Lock"));
-  const result = { desktop, controls, mobile, game, fullscreen, expectedHeadlessWarnings, unexpectedConsoleErrors };
+  const result = { desktop, questions, mobile, game, fullscreen, expectedHeadlessWarnings, unexpectedConsoleErrors };
   console.log(JSON.stringify(result, null, 2));
 
   const passed =
     desktop.direction === "rtl" &&
     desktop.language === "ar" &&
-    desktop.slideCounter === "1 / 3" &&
-    desktop.slideLoaded &&
+    desktop.lessonSectionAbsent &&
+    desktop.lessonNavAbsent &&
     desktop.gameIsLazy &&
     desktop.noHorizontalOverflow &&
     desktop.teamNames.startsWith("عمر") &&
     desktop.rootBackground === "rgb(8, 15, 31)" &&
     desktop.rootOverscroll === "none" &&
     desktop.bodyOverscroll === "none" &&
-    controls.afterNext === "2 / 3" &&
-    controls.imageLoaded &&
-    controls.previousEnabled &&
+    questions.renderedFirstQuestion === "السؤال ١" &&
+    questions.firstAnswerVisible &&
+    questions.firstAnswer.includes("الجبال وصعوبة الطرق البرية") &&
+    questions.tenthQuestion === "هل واجهت تقطيعًا أو تأخيرًا أو تفاعلًا لم يعمل من أول مرة؟" &&
+    questions.pollOptions.join("/") === "لا/أحيانًا/كثيرًا" &&
+    questions.pollResponse === "اخترت: لا" &&
+    questions.pollChoicePressed === "true" &&
+    questions.total === "١٠ / ١١" &&
+    questions.downloadLink === "content/presentation/ancient-greece-questions.pptx" &&
     mobile.noHorizontalOverflow &&
     mobile.heroVisible &&
     game.entryLoaded &&
@@ -245,7 +265,6 @@ try {
     !game.engineFailure &&
     game.keyboardInputDispatched &&
     fullscreen.apiAvailable &&
-    fullscreen.presentationControl &&
     fullscreen.gameControl &&
     unexpectedConsoleErrors.length === 0;
 

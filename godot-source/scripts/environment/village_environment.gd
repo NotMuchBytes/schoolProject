@@ -517,9 +517,10 @@ func _dress_facade(name: String, ground_position: Vector3, size: Vector3, yaw: f
 	_make_box(name + "SillEast", ground_position + front + Vector3(shutter_x, sill_height, 0).rotated(Vector3.UP, yaw), Vector3(0.98, 0.13, 0.24), worn_limestone, false, yaw)
 	_make_box(name + "ShutterWest", ground_position + front + Vector3(-shutter_x, sill_height + 0.43, 0.035).rotated(Vector3.UP, yaw), Vector3(0.16, 0.92, 0.09), olive_wood, false, yaw)
 	_make_box(name + "ShutterEast", ground_position + front + Vector3(shutter_x, sill_height + 0.43, 0.035).rotated(Vector3.UP, yaw), Vector3(0.16, 0.92, 0.09), olive_wood, false, yaw)
-	# Alternate the canopy depth and roof height to create a lived-in, uneven skyline.
+	# Keep a shallow doorway canopy, but leave the imported pitched roof untouched.
+	# The previous full-building "roof lip" intersected the roof planes and looked
+	# like a floating black slab from the third-person camera.
 	_make_box(name + "Awning", ground_position + front * 1.35 + Vector3.UP * (2.34 + float(variant % 3) * 0.09), Vector3(size.x * 0.62, 0.12, 0.74 + float(variant % 2) * 0.18), weathered_roof, false, yaw)
-	_make_box(name + "RoofLip", ground_position + Vector3.UP * (size.y + 0.22 + float(variant % 3) * 0.04), Vector3(size.x + 0.46, 0.18, size.z + 0.46), weathered_roof, false, yaw)
 
 
 func _create_harbor_finishings() -> void:

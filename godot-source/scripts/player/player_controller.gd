@@ -61,6 +61,10 @@ func _ready() -> void:
 	# a short exponential ease below, so disabling event accumulation does not
 	# make the view feel twitchy.
 	Input.use_accumulated_input = false
+	# Prevent the camera boom from collapsing into the player or nearby spawn walls.
+	camera_boom.add_excluded_object(get_rid())
+	if OS.has_feature("web"):
+		camera_boom.collision_mask = 0
 	_camera_pivot_height = camera_pivot.position.y
 	# The camera rig tracks in world space so CharacterBody stair snapping and small
 	# landing corrections do not transfer directly into the picture.
@@ -442,10 +446,7 @@ func _collect_player_meshes(node: Node) -> void:
 
 
 func _update_camera_visual_fade(camera_clearance: float) -> void:
-	var fade := 0.0
-	if camera.current:
-		fade = 1.0 - smoothstep(CAMERA_FADE_NEAR, CAMERA_FADE_FAR, camera_clearance)
-	_apply_camera_visual_fade(fade)
+	_apply_camera_visual_fade(0.0)
 
 
 func _apply_camera_visual_fade(fade: float) -> void:
@@ -457,7 +458,7 @@ func _apply_camera_visual_fade(fade: float) -> void:
 	# brief clean hide. Once an obstruction brings the boom inside the character's
 	# silhouette, hide the whole visual (including held props) until clearance
 	# returns; the collision body and gameplay remain unchanged.
-	body_visual.visible = fade < 0.68
+	body_visual.visible = true
 	var mesh_fade := minf(fade, 0.96)
 	for index in range(_player_meshes.size()):
 		var geometry := _player_meshes[index]

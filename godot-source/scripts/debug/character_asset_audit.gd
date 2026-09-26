@@ -64,7 +64,9 @@ func _run_audit() -> void:
 		if visual == null:
 			continue
 		_check(
-			absf(wrapf(visual.rotation.y, -PI, PI)) < 0.01,
+			# NPC idle animation adds a subtle living turn (up to 0.055 radians).
+			# The audit should reject a flipped rig, not normal breathing motion.
+			absf(wrapf(visual.rotation.y, -PI, PI)) < 0.075,
 			"%s uses the canonical forward-facing visual axis" % node_path
 		)
 		_check(

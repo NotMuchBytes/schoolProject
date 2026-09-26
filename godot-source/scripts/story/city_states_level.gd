@@ -11,6 +11,9 @@ enum ChapterState {
 	TRANSITIONING
 }
 
+const SCENE_PATH := "res://scenes/levels/city_states_level.tscn"
+const STAGE_KEY := "city_states_stage"
+
 @onready var fall_respawn: FallRespawn = $FallRespawn
 @onready var athens_citizen: NPCController = $AthensCast/AthensCitizen
 @onready var sparta_trainer: NPCController = $SpartaCast/SpartaTrainer
@@ -37,10 +40,9 @@ func _ready() -> void:
 	sparta_cast.process_mode = Node.PROCESS_MODE_DISABLED
 	set_npc_available(athens_citizen, false, false)
 	set_npc_available(sparta_trainer, false, false)
-	set_objective(StoryContent.MISSION_CITY_STATES, "استكشف ساحة أثينا")
 	AudioDirector.play_ambient("athens_civic_crowd")
 	AudioDirector.play_music("city_states_theme")
-	call_deferred("_play_athens_arrival")
+	_restore_saved_stage()
 
 
 func on_npc_interaction_requested(npc: Node) -> void:
@@ -53,12 +55,16 @@ func on_npc_interaction_requested(npc: Node) -> void:
 func on_story_conversation_finished(context_id: String, _npc: Node3D) -> void:
 	if context_id == "athens_citizen":
 		set_npc_available(athens_citizen, false, false)
+		hud.show_action_feedback("فهمتَ نظام أثينا — الرحلة تتجه الآن إلى إسبرطة", "checkpoint", 3.0)
 		_transition_to_sparta()
 	elif context_id == "sparta_trainer":
 		set_npc_available(sparta_trainer, false, false)
 		_state = ChapterState.CONFLICT
+		set_story_progress("أثينا وإسبرطة", "مقارنة المدينتين", 4, 4)
+		_save_stage("conflict")
 		Objectives.clear_objective()
 		hud.show_objective_panel(false)
+		hud.show_action_feedback("اكتملت المقارنة — شاهد نتيجة الصراع", "checkpoint", 2.8)
 		await cutscene.play_shots("city_state_conflict", StoryContent.conflict_shots(), true)
 
 
@@ -66,6 +72,7 @@ func on_cutscene_completed(sequence_name: String, _was_skipped: bool) -> void:
 	if sequence_name == "athens_arrival":
 		hud.show_objective_panel(true)
 		set_objective(StoryContent.MISSION_CITY_STATES, "استكشف ساحة أثينا")
+		set_story_progress("أثينا", "استكشاف الساحة", 0, 4)
 	elif sequence_name == "city_state_conflict":
 		_state = ChapterState.TRANSITIONING
 		GameFlow.transition_to_scene(
@@ -96,6 +103,7 @@ func _on_athens_observation_entered(body: Node3D) -> void:
 	_state = ChapterState.ATHENS_OBSERVING
 	athens_observation_trigger.set_deferred("monitoring", false)
 	set_objective(StoryContent.MISSION_CITY_STATES, "استمع إلى نقاش المواطنين")
+	set_story_progress("أثينا", "الاستماع إلى نقاش المواطنين", 0, 4)
 	_play_ambient_exchange(StoryContent.athens_observation(), "athens_debate")
 
 
@@ -105,6 +113,7 @@ func _on_sparta_observation_entered(body: Node3D) -> void:
 	_state = ChapterState.SPARTA_OBSERVING
 	sparta_observation_trigger.set_deferred("monitoring", false)
 	set_objective(StoryContent.MISSION_CITY_STATES, "شاهد تدريبات إسبرطة")
+	set_story_progress("إسبرطة", "مشاهدة التدريب العسكري", 2, 4)
 	_play_ambient_exchange(StoryContent.sparta_training(), "sparta_training")
 
 
@@ -146,10 +155,14 @@ func _play_ambient_exchange(entries: Array, cue_name: String) -> void:
 		_state = ChapterState.ATHENS_CITIZEN
 		set_npc_available(athens_citizen, true, true)
 		set_objective(StoryContent.MISSION_CITY_STATES, "تحدث إلى المواطن الأثيني")
+		set_story_progress("أثينا", "التحدث إلى المواطن الأثيني", 1, 4)
+		_save_stage("athens_citizen")
 	elif _state == ChapterState.SPARTA_OBSERVING:
 		_state = ChapterState.SPARTA_TRAINER
 		set_npc_available(sparta_trainer, true, true)
 		set_objective(StoryContent.MISSION_CITY_STATES, "تحدث إلى المدرّب الإسبرطي")
+		set_story_progress("إسبرطة", "التحدث إلى المدرّب الإسبرطي", 3, 4)
+		_save_stage("sparta_trainer")
 
 
 func _transition_to_sparta() -> void:
@@ -166,6 +179,8 @@ func _transition_to_sparta() -> void:
 	_state = ChapterState.SPARTA_WATCH
 	AudioDirector.play_ambient("sparta_training_yard")
 	set_objective(StoryContent.MISSION_CITY_STATES, "شاهد تدريبات إسبرطة")
+	set_story_progress("إسبرطة", "مشاهدة التدريب العسكري", 2, 4)
+	_save_stage("sparta_watch")
 
 
 func _activate_sparta() -> void:
@@ -205,3 +220,51 @@ func _apply_sparta_atmosphere() -> void:
 	sun.light_color = Color(1.0, 0.80, 0.64)
 	sun.light_energy = 1.02
 	sun.rotation = Vector3(-0.80, -0.42, -0.08)
+
+
+func _restore_saved_stage() -> void:
+	var saved_stage := str(GameFlow.story_flags.get(STAGE_KEY, "athens_explore"))
+	match saved_stage:
+		"athens_citizen":
+			_state = ChapterState.ATHENS_CITIZEN
+			athens_observation_trigger.set_deferred("monitoring", false)
+			set_npc_available(athens_citizen, true, true)
+			set_objective(StoryContent.MISSION_CITY_STATES, "تحدث إلى المواطن الأثيني")
+			set_story_progress("أثينا", "التحدث إلى المواطن الأثيني", 1, 4)
+		"sparta_watch", "sparta_trainer", "conflict":
+			_activate_sparta()
+			AudioDirector.play_ambient("sparta_training_yard")
+			if saved_stage == "sparta_trainer":
+				_state = ChapterState.SPARTA_TRAINER
+				sparta_observation_trigger.set_deferred("monitoring", false)
+				set_npc_available(sparta_trainer, true, true)
+				set_objective(StoryContent.MISSION_CITY_STATES, "تحدث إلى المدرّب الإسبرطي")
+				set_story_progress("إسبرطة", "التحدث إلى المدرّب الإسبرطي", 3, 4)
+			elif saved_stage == "conflict":
+				_state = ChapterState.CONFLICT
+				sparta_observation_trigger.set_deferred("monitoring", false)
+				Objectives.clear_objective()
+				hud.show_objective_panel(false)
+				set_story_progress("أثينا وإسبرطة", "مقارنة المدينتين", 4, 4)
+				call_deferred("_resume_conflict")
+			else:
+				_state = ChapterState.SPARTA_WATCH
+				set_objective(StoryContent.MISSION_CITY_STATES, "شاهد تدريبات إسبرطة")
+				set_story_progress("إسبرطة", "مشاهدة التدريب العسكري", 2, 4)
+		_:
+			_state = ChapterState.ATHENS_EXPLORE
+			set_objective(StoryContent.MISSION_CITY_STATES, "استكشف ساحة أثينا")
+			set_story_progress("أثينا", "استكشاف الساحة", 0, 4)
+			if not GameFlow.has_flag("athens_arrival_seen"):
+				GameFlow.set_flag("athens_arrival_seen")
+				_save_stage("athens_explore")
+				call_deferred("_play_athens_arrival")
+
+
+func _resume_conflict() -> void:
+	if _state == ChapterState.CONFLICT and not cutscene.is_active():
+		await cutscene.play_shots("city_state_conflict", StoryContent.conflict_shots(), true)
+
+
+func _save_stage(stage: String) -> void:
+	GameFlow.save_story_progress(STAGE_KEY, stage, SCENE_PATH)
