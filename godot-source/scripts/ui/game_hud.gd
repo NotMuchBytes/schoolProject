@@ -18,6 +18,7 @@ signal dialogue_finished
 @onready var completion_panel: PanelContainer = $CompletionPanel
 @onready var completion_label: Label = $CompletionPanel/Margin/Message
 @onready var cutscene_hint: Label = $CutsceneHint
+@onready var quest_pointer: Label = $QuestPointer
 
 var _dialogue_lines: PackedStringArray = PackedStringArray()
 var _line_index: int = 0
@@ -36,6 +37,8 @@ var _journey_dots: HBoxContainer
 var _journey_tween: Tween
 var _completion_tween: Tween
 var _completion_base_y: float = 42.0
+var _quest_target: Node3D
+var _quest_pointer_time: float = 0.0
 
 
 func _ready() -> void:
@@ -62,6 +65,35 @@ func _ready() -> void:
 	Objectives.objective_cleared.connect(_on_objective_cleared)
 	if not Objectives.objective_text.is_empty():
 		_on_objective_changed(Objectives.mission_title, Objectives.objective_text)
+
+
+func _process(delta: float) -> void:
+	_quest_pointer_time += delta
+	if _quest_target == null or not is_instance_valid(_quest_target):
+		quest_pointer.position = Vector2(get_viewport().get_visible_rect().size.x - 322.0, 34.0)
+		return
+	var camera := get_viewport().get_camera_3d()
+	if camera == null:
+		return
+	var head_position := _quest_target.global_position + Vector3.UP * 2.42
+	var screen_position := camera.unproject_position(head_position)
+	quest_pointer.position = screen_position - quest_pointer.size * 0.5
+	quest_pointer.position.y += sin(_quest_pointer_time * 3.0) * 5.0
+
+
+func set_quest_target(target: Node3D) -> void:
+	_quest_target = target
+	_quest_pointer_time = 0.0
+
+
+func clear_quest_target(target: Node3D = null) -> void:
+	if target != null and _quest_target != target:
+		return
+	_quest_target = null
+
+
+func get_quest_target() -> Node3D:
+	return _quest_target
 
 
 func set_objective(objective: String) -> void:

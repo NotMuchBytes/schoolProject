@@ -362,3 +362,23 @@ theme_override_font_sizes/font_size = 14
 text = "Enter لتخطي السطر  •  Esc لتخطي المشهد"
 text_direction = 2
 horizontal_alignment = 2
+
+[node name="QuestPointer" type="Label" parent="."]
+layout_direction = 1
+offset_left = 612.0
+offset_top = 150.0
+offset_right = 668.0
+offset_bottom = 214.0
+z_index = 50
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.72, 0.12, 1)
+theme_override_colors/font_outline_color = Color(0.10, 0.065, 0.018, 0.98)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.55)
+theme_override_constants/outline_size = 9
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 48
+text = "!"
+text_direction = 1
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -8,16 +8,18 @@ const MIN_SCALE := 0.55
 const MAX_SCALE := 0.75
 const SAMPLE_SECONDS := 2.0
 const ARABIC_FONT_PATH := "res://assets/fonts/NotoSansArabic-Regular.ttf"
+const LATIN_GREEK_FONT_PATH := "res://assets/fonts/NotoSans-LatinGreek.ttf"
 const WEB_CAMERA_FAR := 150.0
 
 var _web_enabled := false
 var _sample_elapsed := 0.0
 var _warmup_elapsed := 0.0
 var _arabic_font: Font
+var _latin_greek_font: Font
 
 
 func _ready() -> void:
-	_install_arabic_font()
+	_install_multilingual_fonts()
 	_web_enabled = OS.has_feature("web")
 	if not _web_enabled:
 		set_process(false)
@@ -30,7 +32,7 @@ func _ready() -> void:
 	call_deferred("_optimize_current_scene")
 
 
-func _install_arabic_font() -> void:
+func _install_multilingual_fonts() -> void:
 	# Use Godot's imported FontFile so the glyph data is embedded correctly in
 	# WebAssembly builds. Keep a raw-file fallback for source checkouts that have
 	# not generated an import cache yet.
@@ -41,16 +43,29 @@ func _install_arabic_font() -> void:
 		var raw_font := FontFile.new()
 		if raw_font.load_dynamic_font(ARABIC_FONT_PATH) == OK:
 			_arabic_font = raw_font
+	var imported_latin_greek := load(LATIN_GREEK_FONT_PATH)
+	if imported_latin_greek is Font:
+		_latin_greek_font = imported_latin_greek as Font
+	else:
+		var raw_latin_greek := FontFile.new()
+		if raw_latin_greek.load_dynamic_font(LATIN_GREEK_FONT_PATH) == OK:
+			_latin_greek_font = raw_latin_greek
 	if _arabic_font != null:
 		var engine_font := ThemeDB.get_default_theme().default_font
+		var fallbacks: Array[Font] = []
+		if _latin_greek_font != null:
+			fallbacks.append(_latin_greek_font)
 		if engine_font != null:
-			_arabic_font.set_fallbacks([engine_font])
+			fallbacks.append(engine_font)
+		_arabic_font.set_fallbacks(fallbacks)
 		ThemeDB.fallback_font = _arabic_font
 		var project_theme := ThemeDB.get_project_theme()
 		if project_theme != null:
 			project_theme.default_font = _arabic_font
 	else:
 		push_error("Could not load the bundled Arabic font")
+	if _latin_greek_font == null:
+		push_error("Could not load the bundled Latin and Greek font")
 
 
 func _process(delta: float) -> void:

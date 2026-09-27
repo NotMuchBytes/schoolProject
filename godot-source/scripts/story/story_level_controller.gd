@@ -77,22 +77,15 @@ func set_npc_available(npc: Node, enabled: bool, show_marker: bool = false) -> v
 	if npc.has_method("set_interaction_enabled"):
 		npc.call("set_interaction_enabled", enabled)
 	if npc.has_method("set_quest_marker"):
+		# Keep the subtle world-space ground ring, while the readable exclamation
+		# mark is a single WebGL-safe HUD pointer owned by GameHUD.
 		npc.call("set_quest_marker", show_marker and enabled)
-		# Label3D visibility toggled during the first Web frame can be culled until
-		# another state change. Reassert only the active story target after one
-		# rendered frame; inactive and ambient characters remain scene-authored off.
-		if show_marker and enabled:
-			_reassert_quest_marker(npc)
+	if hud != null:
+		if show_marker and enabled and npc is Node3D:
+			hud.set_quest_target(npc as Node3D)
+		elif npc is Node3D:
+			hud.clear_quest_target(npc as Node3D)
 	_refresh_interaction_prompt()
-
-
-func _reassert_quest_marker(npc: Node) -> void:
-	await get_tree().process_frame
-	if not is_instance_valid(npc) or not npc.has_method("set_quest_marker"):
-		return
-	if npc.has_method("is_interaction_enabled") and not bool(npc.call("is_interaction_enabled")):
-		return
-	npc.call("set_quest_marker", true)
 
 
 func on_npc_interaction_requested(_npc: Node) -> void:

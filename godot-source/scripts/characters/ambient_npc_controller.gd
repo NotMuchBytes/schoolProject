@@ -2,6 +2,7 @@ class_name AmbientNPCController
 extends NPCController
 
 @export var ambient_category: String = "villager"
+@export var active_in_scene: bool = true
 @export var ambient_lines: PackedStringArray = PackedStringArray()
 @export_range(2.0, 30.0, 0.5) var speech_interval_min: float = 7.0
 @export_range(2.0, 30.0, 0.5) var speech_interval_max: float = 13.0
@@ -22,7 +23,15 @@ var _exchange_running := false
 
 func _ready() -> void:
 	super._ready()
+	if not active_in_scene:
+		hide()
+		set_process(false)
+		set_physics_process(false)
+		return
+	add_to_group("ambient_roamers")
 	interaction_enabled = false
+	patrol_enabled = true
+	_keep_roamer_visible()
 	ambient_speech.hide()
 	_speech_timer = randf_range(speech_interval_min, speech_interval_max)
 	_ambient_player = AudioStreamPlayer3D.new()
@@ -34,6 +43,29 @@ func _ready() -> void:
 		_ambient_player.bus = "Voice"
 	add_child(_ambient_player)
 	VoiceDirector.ambient_silence_requested.connect(_on_ambient_silence_requested)
+
+
+## Ambient citizens are real, visible world population rather than quest NPCs.
+## Keep their character meshes resident at normal gameplay distances while
+## leaving markers and interaction disabled.
+func _keep_roamer_visible() -> void:
+	show()
+	if visual != null:
+		visual.show()
+		var character_model := visual.get_node_or_null("CharacterModel") as Node3D
+		if character_model != null:
+			character_model.show()
+			_stabilize_roamer_meshes(character_model)
+
+
+func _stabilize_roamer_meshes(node: Node) -> void:
+	if node is GeometryInstance3D:
+		var geometry := node as GeometryInstance3D
+		geometry.visibility_range_end = 0.0
+		geometry.ignore_occlusion_culling = true
+		geometry.extra_cull_margin = maxf(geometry.extra_cull_margin, 3.0)
+	for child in node.get_children():
+		_stabilize_roamer_meshes(child)
 
 
 func _exit_tree() -> void:

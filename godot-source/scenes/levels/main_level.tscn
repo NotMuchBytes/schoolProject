@@ -151,6 +151,9 @@ speech_interval_min = 9.0
 speech_interval_max = 15.0
 
 [node name="UpperPathWalker" parent="AmbientVillagers" instance=ExtResource("9_ambient_messenger")]
+visible = false
+process_mode = 4
+active_in_scene = false
 position = Vector3(-1.8, 0, -7.0)
 appearance_profile = 11
 appearance_variant = 3
@@ -161,6 +164,9 @@ speech_interval_min = 13.0
 speech_interval_max = 20.0
 
 [node name="DockPorter" parent="AmbientVillagers" instance=ExtResource("9_ambient_messenger")]
+visible = false
+process_mode = 4
+active_in_scene = false
 position = Vector3(-7.8, 0, 14.1)
 appearance_profile = 11
 appearance_variant = 5
@@ -172,6 +178,9 @@ ambient_lines = PackedStringArray()
 ambient_category = "village_dock_porter"
 
 [node name="PotterApprentice" parent="AmbientVillagers" instance=ExtResource("11_ambient_recipient")]
+visible = false
+process_mode = 4
+active_in_scene = false
 position = Vector3(9.0, 0, 4.8)
 appearance_profile = 12
 appearance_variant = 6
